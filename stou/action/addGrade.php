@@ -27,11 +27,12 @@
         <div class="panel-heading text-center">เพิ่มข้อมูลการลงทะเบียนเรียน</div>
         <div class="panel-body">
         
-        <input type="hidden" id="sub_id" name="sub_id" value="<?php $_GET["sub_id"]  ?>" />
-        <input type="hidden" id="sub_name" name="sub_name" value="<?php $_GET["sub_name"]  ?>" />
+       
 
 
         <form class="form-horizontal" action="insert_grade.php">
+        <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $_GET["sub_id"];  ?>" />
+        <input type="hidden" id="sub_name" name="sub_name" value="<?php echo $_GET["sub_name"];  ?>" />
     <div class="form-group">
       <label class="control-label col-sm-2">ชุดวิชา :</label>
       <label class="control-label col-sm-10" style="text-align: left !important">  <?php echo $_GET["sub_id"] . " " .  $_GET["sub_name"] ; ?></label>
@@ -89,7 +90,7 @@
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-primary">บันทึกผลการเรียน</button>
       </div>
     </div>
   </form>
@@ -102,6 +103,14 @@
 
   </div>
 </div><br>
+
+<?php
+
+// select table grade
+
+
+
+?>
 
 
 <?php include '../include/footer2.php';?>
