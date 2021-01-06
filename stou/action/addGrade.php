@@ -1,0 +1,107 @@
+<?php include '../include/header2.php';?>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+      </ul> 
+    </div>
+  </div>
+</nav>
+
+
+<div class="container">    
+  <div class="row">
+
+    <div class="col-sm-12"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">เพิ่มข้อมูลการลงทะเบียนเรียน</div>
+        <div class="panel-body">
+        
+        <input type="hidden" id="sub_id" name="sub_id" value="<?php $_GET["sub_id"]  ?>" />
+        <input type="hidden" id="sub_name" name="sub_name" value="<?php $_GET["sub_name"]  ?>" />
+
+
+        <form class="form-horizontal" action="insert_grade.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2">ชุดวิชา :</label>
+      <label class="control-label col-sm-10" style="text-align: left !important">  <?php echo $_GET["sub_id"] . " " .  $_GET["sub_name"] ; ?></label>
+    </div>
+    <div class="form-group">
+
+
+      <label class="control-label col-sm-2" for="term_no">ภาคเรียน :</label>
+      <div class="col-sm-1">          
+      <select class="form-control" id="term_no" name="term_no">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      </div>
+
+      <label class="control-label col-sm-1" for="term_year">/</label>
+      <div class="col-sm-2">          
+      <select class="form-control" id="term_year" name="term_year">
+        <option value="2564">2564</option>
+        <option value="2563">2563</option>
+        <option value="2562">2562</option>
+        <option value="2561">2561</option>
+        <option value="2560">2560</option>
+        <option value="2559">2559</option>
+        <option value="2558">2558</option>
+        <option value="2557">2557</option>
+        <option value="2556">2556</option>
+        <option value="2555">2555</option>
+        <option value="2554">2554</option>
+        <option value="2553">2553</option>
+        <option value="2552">2552</option>
+        <option value="2551">2551</option>
+        <option value="2550">2550</option>
+
+      </select>
+      </div>
+      <label class="control-label col-sm-2" for="grade">ผลการเรียน :</label>
+      <div class="col-sm-1">          
+      <select class="form-control" id="grade" name="grade">
+        <option value="I">I</option>
+        <option value="U*">U*</option>
+        <option value="U">U</option>
+        <option value="S">S</option>
+        <option value="S*">S*</option>
+        <option value="H">H</option>
+        <option value="H*">H*</option>
+      </select>
+      </div>
+
+      <label class="control-label col-sm-3" > </label>
+
+
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+
+
+        </div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+
+  </div>
+</div><br>
+
+
+<?php include '../include/footer2.php';?>
