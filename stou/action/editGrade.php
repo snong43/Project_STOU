@@ -46,7 +46,7 @@ $grade = $_GET["grade"];
 $user_login = $_SESSION["user"];
 
 
-
+echo "sub_id = " . $sub_id;
 
 ?>
 
@@ -62,7 +62,7 @@ $user_login = $_SESSION["user"];
 
 
         <form class="form-horizontal" action="upGrade.php" method="post">
-      <input type="hidden" id="sub_id" name="" value="<?php echo $sub_id;?>" />
+      <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $sub_id;?>" />
 
     <div class="form-group">
       <label class="control-label col-sm-2">ชุดวิชา :</label>
