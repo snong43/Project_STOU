@@ -44,6 +44,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "stou";
+$user_login = $_SESSION["user"];
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 mysqli_set_charset($conn,"utf8");
@@ -75,9 +76,11 @@ if ($conn->connect_error) {
       
             <div class="form-group">
             <label class="control-label col-sm-2" for="course_id">รหัสวิชา:</label>
-            <div class="col-sm-10">
-                <input type="text" class="form-control" id="course_id" placeholder="รหัสชุดวิชา" name="course_id" maxlength="5" minlength="2">
+            <div class="col-sm-6">
+                <input type="text" class="form-control" id="course_id" placeholder="รหัสชุดวิชา กรอกเฉพาะตัวเลขเท่านั้น อย่างน้อย 2 ตัวเลขขึ้นไป" name="course_id" maxlength="5" minlength="2">
             </div>
+            <p class="control-label col-sm-4 " >** กรอกอย่างน้อยตัวเลข 2 ตัวขึ้นไป เช่น 10, 111, 9610  </p>
+
             </div>
 
             <div class="form-group">        
@@ -117,7 +120,7 @@ if ($conn->connect_error) {
           echo "<tr>";
           echo "<td>". $row["sub_id"] ."</td>";
           echo "<td>". $row["sub_name"] ."</td>";
-          echo "<td><a href=\"../action/addGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."\" <button type=\"button\" class=\"btn btn-info\"> เพิ่ม </button></td></a>";
+          echo "<td><a href=\"../action/addGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."\" <button type=\"button\" class=\"btn btn-info\"> เพิ่ม </button></a></td>";
           echo "</tr>";
 
         }
@@ -190,46 +193,65 @@ if ($conn->connect_error) {
       <div class="panel-heading">ข้อมูลการลงทะเบียนเรียน</div>
       <div class="panel-body">
       
-      
-      
-      <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>ภาคเรียน</th>
-        <th>รหัสชุดวิชา</th>
-        <th>ชื่อชุดวิชา</th>
-        <th>เกรด</th>
-        <th>ดำเนินการ</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>John</td>
-        <td>Doe</td>
-        <td>john@example.com</td>
-        <td>Doe</td>
-        <td>Doe</td>
+      <?php
 
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td>Doe</td>
-        <td>Doe</td>
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        mysqli_set_charset($conn,"utf8");
 
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td>Doe</td>
-        <td>Doe</td>
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+          }
 
-      </tr>
-    </tbody>
-  </table>
+
+
+          $StrSQL = "SELECT * FROM grade WHERE user = '$user_login'  order by term_no, term_year";
+          $result = $conn->query($StrSQL);
+    
+    
+          if (mysqli_num_rows($result) > 0) {
+    
+            echo "<table class=\"table table-striped\">";
+            echo "<thead>";
+            echo "<tr>";
+            echo "<th>ภาคเรียน</th>";
+            echo "<th>รหัสชุดวิชา</th>";
+            echo "<th>ชื่อชุดวิชา</th>";
+            echo "<th>เกรด</th>";
+            echo "<th>ดำเนินการ</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+              echo "<tr>";
+              echo "<td>". $row["term_no"] . " / " .$row["term_year"] ."</td>";
+              echo "<td>". $row["sub_id"] ."</td>";
+              echo "<td>". $row["sub_name"] ."</td>";
+              echo "<td>". $row["grade"] ."</td>";
+
+             echo "<td>";
+             echo "<a href=\"../action/editGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."&grade=".$row["grade"]."&term_no=".$row["term_no"]."&term_year=".$row["term_year"]."\" <button type=\"button\" class=\"btn btn-success\"> แก้ไข </button></a>";
+
+             echo "</td>";
+              echo "</tr>";
+    
+            }
+          } else {
+            echo "<tr>";
+            echo "<td colspan=\"3\" class=\"text-center\"> ไม่มีข้อมูล </td>";
+            echo "</tr>";
+          }
+          echo "</tbody>";
+          echo "</table>";
+        
+          mysqli_close($conn);
+
+
+
+
+      ?>
       
+
       
       </div>
     </div>

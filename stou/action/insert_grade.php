@@ -73,7 +73,7 @@
 
         if ($result->num_rows == 0) {
             $StrSQL = "INSERT INTO grade (user, sub_id, sub_name, term_no, term_year, grade)
-            VALUES ('$user_login', '$sub_id', '$sub_name', '$term_no', '$term_year','$grade')";
+            VALUES ('$user_login', '$sub_id', '$sub_name', '$term_no', '$term_year','$term_grade')";
             
             if ($conn->query($StrSQL) === TRUE) {
                     // forward
