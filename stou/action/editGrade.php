@@ -57,12 +57,13 @@ $user_login = $_SESSION["user"];
       <div class="panel panel-primary">
         <div class="panel-heading text-center">แก้ไขข้อมูลการลงทะเบียนเรียน</div>
         <div class="panel-body">
-        
+    
        
 
 
-        <form class="form-horizontal" action="insert_grade.php">
-      
+        <form class="form-horizontal" action="upGrade.php" method="post">
+      <input type="hidden" id="sub_id" name="" value="<?php echo $sub_id;?>" />
+
     <div class="form-group">
       <label class="control-label col-sm-2">ชุดวิชา :</label>
       <label class="control-label col-sm-10" style="text-align: left !important">  <?php echo $_GET["sub_id"] . " " .  $_GET["sub_name"] ; ?></label>
@@ -247,7 +248,7 @@ $user_login = $_SESSION["user"];
       <?php
             $gra = array("I", "U", "U*", "S","S*","H","H*");
 
-            for ($x = 0; $x < count($gra)-1; $x++) {
+            for ($x = 0; $x < count($gra); $x++) {
                 if($gra[$x] == $grade){
                    echo "<option value=\"". $gra[$x] ."\" selected>". $gra[$x] ."</option>";
 
@@ -269,7 +270,7 @@ $user_login = $_SESSION["user"];
 
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">บันทึกผลการเรียน</button>  <button type="submit" class="btn btn-danger">ลบรายการนี้</button>
+        <button type="submit" class="btn btn-success">บันทึกผลการเรียน</button>  <a href="delGrade.php?sub_id=<?php echo $sub_id;?>"><button type="button" class="btn btn-danger">ลบรายการนี้</button></a>
       </div>
     </div>
   </form>
