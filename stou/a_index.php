@@ -13,8 +13,8 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">ข้อมูลสมาชิก</a></li>
-        <li><a href="#">ปฏิทิน</a></li>
+        <li><a href="./admin/a_course.php">หลักสูตร</a></li>
+        <li><a href="./admin/a_member.php">ข้อมูลสมาชิก</a></li>
 
 
 
@@ -34,27 +34,25 @@
 
 <div class="container">    
   <div class="row">
-    <div class="col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center">ปฏิทิน</div>
-        <div class="panel-body"><img src="img/calendar.png" class="img-responsive"  style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-      </div>
-    </div>
+
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">หลักสูตร</div>
-        <div class="panel-body"><img src="img/course.png" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-body"><a href="./admin/a_course.php"><img src="img/course.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer"></div>
       </div>
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
-        <div class="panel-heading text-center">กิจกรรม</div>
-        <div class="panel-body"><img src="img/them.png" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
+        <div class="panel-heading text-center">ข้อมูลสมาชิก</div>
+        <div class="panel-body"><a href="./admin/a_member.php"><img src="img/them.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer">รายละเอียดสมาชิก</div>
       </div>
     </div>
+    <div class="col-sm-4"> 
+    </div>
+
+
   </div>
 </div>
 

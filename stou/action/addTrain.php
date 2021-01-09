@@ -66,7 +66,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $StrSQL = "SELECT * FROM grade WHERE user = '$user_login' and sub_id = '$sub_id'";
+        $StrSQL = "SELECT * FROM grade WHERE user = '$user_login' and sub_id = 'sub_id'";
         $result = $conn->query($StrSQL);
 
 
@@ -91,7 +91,7 @@
                    echo "<div class=\"panel panel-danger\">";
                      echo "<div class=\"panel-heading text-center\">เพิ่มข้อมูลเกิดข้อผิดพลาด</div>";
                        echo "<div class=\"panel-body text-center\">";
-                        echo "ข้อผิดพลาด<br> ไม่สามารถเพิ่มชุดวิชาได้เกิดข้อผิดพลาดบางประการ <br>". $conn->error."<br>";
+                        echo "ข้อผิดพลาด<br> ไม่สามารถเพิ่มชุดวิชาได้เกิดข้อผิดพลาดบางประการ <br><br>";
                         echo "<a href=\"../member/m_grade.php\"><button type=\"button\" class=\"btn btn-primary\">ผลการเรียน</button></a>";
                         echo "</div>";
                       echo "<div class=\"panel-footer\"></div>";
@@ -112,7 +112,7 @@
                echo "<div class=\"panel panel-danger\">";
                  echo "<div class=\"panel-heading text-center\">เพิ่มข้อมูลเกิดข้อผิดพลาด</div>";
                    echo "<div class=\"panel-body text-center\">";
-                    echo "ข้อผิดพลาด<br> ชุดวิชานี้มีอยู่แล้ว <br>ไม่สามารถเพิ่มชุดวิชานี้ได้ <br>". $conn->error."<br>";
+                    echo "ข้อผิดพลาด<br> ชุดวิชานี้มีอยู่แล้ว <br>ไม่สามารถชุดวิชานี้ได้ <br><br>";
                     echo "<a href=\"../member/m_grade.php\"><button type=\"button\" class=\"btn btn-primary\">ผลการเรียน</button></a>";
                     echo "</div>";
                   echo "<div class=\"panel-footer\"></div>";

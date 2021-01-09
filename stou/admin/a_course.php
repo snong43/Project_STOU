@@ -13,13 +13,9 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="./m_index.php">Home</a></li>
-        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
-        <li><a href="#">สนใจเรียน</a></li>
-        <li><a href="#">กิจกรรม</a></li>
-        <li><a href="#">บันทึกผลการเรียน</a></li>
+        <li><a href="./admin/a_course.php">หลักสูตร</a></li>
+        <li><a href="./admin/a_member.php">ข้อมูลสมาชิก</a></li>
 
-        <li><a href="#">ทดสอบตัวเอง</a></li>
-        <li><a href="#">ติดต่อ</a></li>
 
 
 
@@ -35,6 +31,8 @@
     </div>
   </div>
 </nav>
+
+
 
 <?php
 
@@ -62,7 +60,7 @@ if ($conn->connect_error) {
 
 
 
-<form class="form-horizontal" action="./m_grade.php" method="post">
+<form class="form-horizontal" action="./a_course.php" method="post">
 
 <div class="container">
   <div class="panel-group">
@@ -106,12 +104,25 @@ if ($conn->connect_error) {
 
       if (mysqli_num_rows($result) > 0) {
 
+      
+
+
         echo "<table class=\"table table-hover\">";
         echo "<thead>";
         echo "<tr>";
-        echo "<th>รหัสวิชา</th>";
+        echo "<th>";
+   
+        echo "รหัสวิชา";
+        echo "</th>";
         echo "<th>ชื่อวิชา</th>";
-        echo "<th>เพิ่มชุดวิชา</th>";
+        echo "<th>";
+        echo "<div class=\"form-group\">";        
+        echo "<div class=\"col-sm-offset-2 col-sm-10\">";
+        echo "<a href=\"../action/addCourse.php\"><button type=\"button\" class=\"btn btn-success\" >เพิ่มชุดวิชาใหม่</button></a>";
+        echo "</div>";
+        echo "</div>";
+        echo "ปรับปรุงข้อมูล";
+        echo "</th>";
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
@@ -120,7 +131,7 @@ if ($conn->connect_error) {
           echo "<tr>";
           echo "<td>". $row["sub_id"] ."</td>";
           echo "<td>". $row["sub_name"] ."</td>";
-          echo "<td><a href=\"../action/addGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."\" <button type=\"button\" class=\"btn btn-info\"> เพิ่ม </button></a></td>";
+          echo "<td><a href=\"../action/u_course.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."&term_no=". $row["term_no"]."\" <button type=\"button\" class=\"btn btn-info\"> แก้ไข </button></a></td>";
           echo "</tr>";
 
         }
@@ -153,80 +164,6 @@ if ($conn->connect_error) {
 
 
 
-<div class="container">
-  <div class="panel-group">
-
-    <div class="panel panel-primary">
-      <div class="panel-heading">ข้อมูลการลงทะเบียนเรียน</div>
-      <div class="panel-body">
-      
-      <?php
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        mysqli_set_charset($conn,"utf8");
-
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
-
-
-          $StrSQL = "SELECT * FROM grade WHERE user = '$user_login'  order by term_no, term_year";
-          $result = $conn->query($StrSQL);
-    
-    
-          if (mysqli_num_rows($result) > 0) {
-    
-            echo "<table class=\"table table-striped\">";
-            echo "<thead>";
-            echo "<tr>";
-            echo "<th>ภาคเรียน</th>";
-            echo "<th>รหัสชุดวิชา</th>";
-            echo "<th>ชื่อชุดวิชา</th>";
-            echo "<th>เกรด</th>";
-            echo "<th>ดำเนินการ</th>";
-            echo "</tr>";
-            echo "</thead>";
-            echo "<tbody>";
-            // output data of each row
-            while($row = mysqli_fetch_assoc($result)) {
-              echo "<tr>";
-              echo "<td>". $row["term_no"] . " / " .$row["term_year"] ."</td>";
-              echo "<td>". $row["sub_id"] ."</td>";
-              echo "<td>". $row["sub_name"] ."</td>";
-              echo "<td>". $row["grade"] ."</td>";
-
-             echo "<td>";
-             echo "<a href=\"../action/editGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."&grade=".$row["grade"]."&term_no=".$row["term_no"]."&term_year=".$row["term_year"]."\" <button type=\"button\" class=\"btn btn-success\"> แก้ไข </button></a>";
-
-             echo "</td>";
-              echo "</tr>";
-    
-            }
-          } else {
-            echo "<tr>";
-            echo "<td colspan=\"3\" class=\"text-center\"> ไม่มีข้อมูล </td>";
-            echo "</tr>";
-          }
-          echo "</tbody>";
-          echo "</table>";
-        
-          mysqli_close($conn);
-
-
-
-
-      ?>
-      
-
-      
-      </div>
-    </div>
-
-
- 
-  </div>
-</div>
 
 
 
