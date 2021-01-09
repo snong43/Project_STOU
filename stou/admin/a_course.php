@@ -115,6 +115,7 @@ if ($conn->connect_error) {
         echo "รหัสวิชา";
         echo "</th>";
         echo "<th>ชื่อวิชา</th>";
+        echo "<th>ภาคเรียน</th>";
         echo "<th>";
         echo "<div class=\"form-group\">";        
         echo "<div class=\"col-sm-offset-2 col-sm-10\">";
@@ -131,6 +132,7 @@ if ($conn->connect_error) {
           echo "<tr>";
           echo "<td>". $row["sub_id"] ."</td>";
           echo "<td>". $row["sub_name"] ."</td>";
+          echo "<td>". $row["term_no"] ."</td>";
           echo "<td><a href=\"../action/u_course.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."&term_no=". $row["term_no"]."\" <button type=\"button\" class=\"btn btn-info\"> แก้ไข </button></a></td>";
           echo "</tr>";
 

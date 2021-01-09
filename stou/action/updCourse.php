@@ -1,3 +1,4 @@
+
 <?php include '../include/header2.php';?>
 
 <nav class="navbar navbar-inverse">
@@ -12,11 +13,11 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="../m_index.php">Home</a></li>
+        <li class="active"><a href="./m_index.php">Home</a></li>
         <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
-        <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li><a href="#">บันทึกผลการเรียน</a></li>
 
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
@@ -26,8 +27,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
-        <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
-        <li><a href="./logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
+        <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
 
 
@@ -38,33 +39,25 @@
 
 
 
+
 <?php
 
-$user_login = $_SESSION["user"] ;
-$user_pwd = $_POST["user_pwd"];
-$user_id = $_POST["user_id"];
-$user_name = $_POST["user_name"];
-$user_email = $_POST["user_email"];
-$user_study = $_POST["user_study"];
-$date = date('Y-m-d H:i:s');
-$msg = "";
-$fwPage = "";
+
+$sub_id = $_POST["sub_id"];
+$sub_name = $_POST["sub_name"];
+$term_no = $_POST["term_no"];
+$term_all = "";
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "stou";
 
-/*
-echo  $user_login  . "<br>";
-echo  $user_pwd  . "<br>";
-echo  $user_id   . "<br>";
-echo  $user_name  . "<br>";
-echo  $user_email  . "<br>";
-echo  $user_study . "<br>";
-
-
-*/
+if("12" == "$term_no" ){
+    $term_all = "Y";
+}else{
+    $term_all = "N";
+}
 
 
 
@@ -76,12 +69,12 @@ if ($conn->connect_error) {
   }
 
 
-$StrSQL = "UPDATE user  SET  pass =  '$user_pwd' , "  .
-            " stou_id =  '$user_id' , " .
-            " name =  '$user_name' , " .
-            " email =  '$user_email' , " .
-            " study =  '$user_study ' " .
-            " WHERE user = '$user_login'";
+$StrSQL = "UPDATE subject  SET  sub_name =  '$sub_name' , "  .
+            " term_no =  '$term_no' , " .
+            " term_all =  '$term_all'  " .
+            " WHERE sub_id = '$sub_id'";
+
+ //           echo " <br> SQL = <br>" . $StrSQL;
 
             if ($conn->query($StrSQL) === TRUE) {
                 echo "<div class=\"container\">" ;    
@@ -91,8 +84,8 @@ $StrSQL = "UPDATE user  SET  pass =  '$user_pwd' , "  .
                    echo "<div class=\"panel panel-success\">";
                      echo "<div class=\"panel-heading text-center\"> Update Success</div>";
                        echo "<div class=\"panel-body text-center\">";
-                        echo "แก้ไขข้อมูลเรียบร้อยแล้ว<br> กรุณาเข้าระบบอีกครั้ง <br>";
-                        echo "<a href=\"../login.php\"><button type=\"button\" class=\"btn btn-primary\">เข้าระบบใหม่</button></a>";
+                        echo "แก้ไขข้อมูลเรียบร้อยแล้ว<br>  <br>";
+                        echo "<a href=\"../admin/a_course.php\"><button type=\"button\" class=\"btn btn-primary\">ไปหน้าชุดวิชาเรียน</button></a>";
                         echo "</div>";
                       echo "<div class=\"panel-footer\"></div>";
                    echo "</div>";
@@ -108,8 +101,8 @@ $StrSQL = "UPDATE user  SET  pass =  '$user_pwd' , "  .
                    echo "<div class=\"panel panel-danger\">";
                      echo "<div class=\"panel-heading text-center\"> Update Fail</div>";
                        echo "<div class=\"panel-body text-center\">";
-                        echo "ปรับปรุงข้อมูลผิดพลาด<br> กลับสู่หน้าประวัติส่วนตัวอีกครั้ง <br>". $conn->error;
-                        echo "<a href=\"../login.php\"><button type=\"button\" class=\"btn btn-primary\">กลับหน้าเกี่ยวกับอีกครั้ง</button></a>";
+                        echo "ปรับปรุงข้อมูลผิดพลาด<br>  <br>". $conn->error;
+                        echo "<a href=\"../admin/a_course.php\"><button type=\"button\" class=\"btn btn-primary\">ไปหน้าชุดวิชาเรียน</button></a>";
                         echo "</div>";
                       echo "<div class=\"panel-footer\"></div>";
                    echo "</div>";
@@ -123,17 +116,5 @@ $StrSQL = "UPDATE user  SET  pass =  '$user_pwd' , "  .
               }
 
 $conn->close();
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
 <?php include '../include/footer2.php';?>

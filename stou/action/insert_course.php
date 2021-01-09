@@ -93,7 +93,7 @@
                      echo "<div class=\"panel-heading text-center\">เพิ่มข้อมูลเกิดข้อผิดพลาด</div>";
                        echo "<div class=\"panel-body text-center\">";
                         echo "ข้อผิดพลาด<br> ไม่สามารถเพิ่มชุดวิชาได้เกิดข้อผิดพลาดบางประการ <br>". $conn->error."<br>";
-                        echo "<a href=\"./acddCourse\"><button type=\"button\" class=\"btn btn-primary\">ผลการเรียน</button></a>";
+                        echo "<a href=\"./acddCourse\"><button type=\"button\" class=\"btn btn-primary\">ชุดวิชา</button></a>";
                         echo "</div>";
                       echo "<div class=\"panel-footer\"></div>";
                    echo "</div>";
@@ -114,7 +114,7 @@
                  echo "<div class=\"panel-heading text-center\">เพิ่มข้อมูลเกิดข้อผิดพลาด</div>";
                    echo "<div class=\"panel-body text-center\">";
                     echo "ข้อผิดพลาด<br> ชุดวิชานี้มีอยู่แล้ว <br>ไม่สามารถเพิ่มชุดวิชานี้ได้ <br>". $conn->error."<br>";
-                    echo "<a href=\"./acddCourse.php\"><button type=\"button\" class=\"btn btn-primary\"></button></a>";
+                    echo "<a href=\"./addCourse.php\"><button type=\"button\" class=\"btn btn-primary\">ชุดวิชา</button></a>";
                     echo "</div>";
                   echo "<div class=\"panel-footer\"></div>";
                echo "</div>";
