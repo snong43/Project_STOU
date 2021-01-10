@@ -43,12 +43,6 @@
         $train_day = $_POST["train_day"];
         $course_id = $_POST["user_study"];
 
-
-        echo "sub_id =" . "$sub_id";
-        echo "train_day =" . "$train_day";
-        echo "course_id =" . "$course_id";
-
-
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -136,7 +130,7 @@
              echo "<div class=\"panel panel-danger\">";
                echo "<div class=\"panel-heading text-center\">เพิ่มข้อมูลเกิดข้อผิดพลาด</div>";
                  echo "<div class=\"panel-body text-center\">";
-                  echo "ข้อผิดพลาด<br> ชุดวิชานี้มีอยู่แล้ว <br>ไม่สามารถชุดวิชานี้ได้ <br><br>";
+                  echo "ข้อผิดพลาด<br> ชุดวิชานี้มีอยู่แล้ว <br>ไม่สามารถชุดวิชานี้ได้ <br>". $conn->error."<br>";
                   echo "<a href=\"../admin/a_course.php\"><button type=\"button\" class=\"btn btn-primary\">ชุดวิชาเรียน</button></a>";
                   echo "</div>";
                 echo "<div class=\"panel-footer\"></div>";

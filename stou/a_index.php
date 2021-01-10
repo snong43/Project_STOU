@@ -42,6 +42,15 @@
         <div class="panel-footer"></div>
       </div>
     </div>
+
+    <div class="col-sm-4"> 
+      <div class="panel panel-primary">
+        <div class="panel-heading text-center">วิชาฝึกอบรม</div>
+        <div class="panel-body"><a href="./admin/a_train.php"><img src="img/record.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer"></div>
+      </div>
+    </div>
+
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">ข้อมูลสมาชิก</div>
