@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2021 at 02:22 AM
+-- Generation Time: Jan 11, 2021 at 12:28 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -35,6 +35,18 @@ CREATE TABLE `grade` (
   `term_year` int(11) NOT NULL,
   `grade` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `grade`
+--
+
+INSERT INTO `grade` (`user`, `sub_id`, `sub_name`, `term_no`, `term_year`, `grade`) VALUES
+('', '', '', 0, 0, ''),
+('', '99999', 'test', 1, 0, ''),
+('snong43', '', '', 0, 0, ''),
+('test', '11301', 'ภาษาอังกฤษสำหรับนักธุรกิจ', 1, 2564, 'H'),
+('test', '32205', 'การบัญชีขั้นกลาง 2', 3, 2559, 'H*'),
+('test', '99312', 'คณิตศาสตร์สำหรับเทคโนโลยีสารสนเทศและการสื่อสาร', 1, 2564, 'U*');
 
 --
 -- Indexes for dumped tables

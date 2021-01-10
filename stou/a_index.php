@@ -53,9 +53,9 @@
 
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
-        <div class="panel-heading text-center">ข้อมูลสมาชิก</div>
-        <div class="panel-body"><a href="./admin/a_member.php"><img src="img/them.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
-        <div class="panel-footer">รายละเอียดสมาชิก</div>
+        <div class="panel-heading text-center">แบบทดสอบ</div>
+        <div class="panel-body"><a href="./admin/a_exam.php"><img src="img/exam.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
+        <div class="panel-footer"></div>
       </div>
     </div>
     <div class="col-sm-4"> 
