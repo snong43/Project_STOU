@@ -72,7 +72,7 @@
     <div class="col-sm-4"> 
       <div class="panel panel-info">
         <div class="panel-heading text-center">ทดสอบตัวเอง</div>
-        <div class="panel-body"><img src="img/exam.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-body"><a href="member/m_exam.php"><img src="img/exam.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">ทดสอบว่า ตัวเอง ควรเรียนอะไรดี</div>
       </div>
     </div>
