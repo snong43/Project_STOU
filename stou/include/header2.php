@@ -13,6 +13,7 @@ session_start();
   <link rel="stylesheet" href="../lib/bootstrap.min.css">
   <script src="../lib/jquery.min.js"></script>
   <script src="../lib/bootstrap.min.js"></script>
+
   <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
     .navbar {
