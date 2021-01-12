@@ -38,7 +38,7 @@
   
         <button type="submit" class="btn btn-default">เข้าระบบ</button>
         <a href="register.php"><button type="button" class="btn btn-default">สมัครสมาชิกใหม่</button> </a><br>
-        <a href="#" ><u>ลืมรหัสผ่าน</u></a>
+        <a href="fwd_mail.php" ><u>ลืมรหัสผ่าน</u></a>
       </div>
     </div>
   </form>

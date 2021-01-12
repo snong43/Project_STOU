@@ -1,7 +1,4 @@
-<?php include 'include/header.php';?>
-
-
-
+<?php include '../include/header2.php';?>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -15,50 +12,34 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-      </ul> 
+        <li class="active"><a href="./m_index.php">Home</a></li>
+        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
+        <li><a href="#">สนใจเรียน</a></li>
+        <li><a href="#">กิจกรรม</a></li>
+        <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
+
+        <li><a href="#">ทดสอบตัวเอง</a></li>
+        <li><a href="#">ติดต่อ</a></li>
+
+
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+        <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
+      </ul>
+
+
+
     </div>
   </div>
 </nav>
 
 <div class="container">
-<h2>ลืมรหัสผ่าน</h2>
+<h2>จำนวนวันฝึกอบรม</h2>
   <form class="form-horizontal" action="action/forgetAction.php" method="post">
-
-
-
-  <div class="panel panel-info">
-      <div class="panel-heading">ข้อมูลสำหรับการขอรหัสผ่าน</div>
-      <div class="panel-body">
-      
-      
-
-      <div class="form-group">
-      <label class="control-label col-sm-2" for="user_login">ชื่อผู้ใช้:</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="user_login" placeholder="Enter User Login" name="user_login">
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="user_id">รหัสนักศึกษา:</label>
-      <div class="col-sm-10">
-        <input type="number" class="form-control" id="user_id" placeholder="Enter STOU ID" name="user_id">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="user_name">ชื่อ-นามสกุล:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="user_name" placeholder="Enter Name" name="user_name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="user_email">อีเมลล์:</label>
-      <div class="col-sm-10">
-        <input type="email" class="form-control" id="user_email" placeholder="Enter Email" name="user_email">
-      </div>
-    </div>
-    <div class="form-group">
+  <div class="form-group">
       <label class="control-label col-sm-2" for="user_study">สาขาวิชาที่เรียน:</label>
       <div class="col-sm-10">          
         <div class="form-group col-sm-12">
@@ -106,30 +87,9 @@
       </div>
     </div>
 
-
-    
-    <div class="form-group">        
-      <div class="col-sm-offset-2 col-sm-10">
-  
-        <button type="submit" class="btn btn-primary">ยืนยันตัวตน</button>
-      </div>
-    </div>
-
-
-
-
-
-
-      </div>
-    </div>
-
-
- 
   </form>
-</div>
+  </div>
 
-</div><br>
 
-<br><br>
 
-<?php include 'include/footer.php';?>
+  <?php include '../include/footer2.php';?>

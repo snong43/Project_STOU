@@ -60,7 +60,7 @@
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">วิชาอบรม</div>
-        <div class="panel-body"><img src="img/them.png" class="img-responsive" style="width:100%" alt="Image"></div>
+        <div class="panel-body"><a href="member/m_day_train.php"><img src="img/them.png" class="img-responsive" style="width:100%" alt="Image"></a></div>
         <div class="panel-footer">มีกิจกรรม สอนเสริม อบรมเข้ม ประสบการณ์วิชาชีพ</div>
       </div>
     </div>
