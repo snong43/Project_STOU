@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -8,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="/stou"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -20,92 +19,54 @@
 
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
 <?php
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "stou";
+  $user_login = $_SESSION["user"];
 
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  mysqli_set_charset($conn,"utf8");
 
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stou";
-$user_login = $_SESSION["user"];
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn,"utf8");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
 ?>
-
-
-
-
-
-
-
 <form class="form-horizontal" action="./m_grade.php" method="post">
-
 <div class="container">
   <div class="panel-group">
-
-
-
     <div class="panel panel-info">
       <div class="panel-heading">เพิ่มข้อมูลการลงทะเบียน</div>
       <div class="panel-body">
-      
-      
             <div class="form-group">
             <label class="control-label col-sm-2" for="course_id">รหัสวิชา:</label>
             <div class="col-sm-6">
                 <input type="text" class="form-control" id="course_id" placeholder="รหัสชุดวิชา กรอกเฉพาะตัวเลขเท่านั้น อย่างน้อย 2 ตัวเลขขึ้นไป" name="course_id" maxlength="5" minlength="2">
             </div>
             <p class="control-label col-sm-4 " >** กรอกอย่างน้อยตัวเลข 2 ตัวขึ้นไป เช่น 10, 111, 9610  </p>
-
             </div>
-
             <div class="form-group">        
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default" name="BtnSearch">ค้นหา</button>
             </div>
             </div>
-
-
-         
       <?php
           if(isset($_POST["BtnSearch"])) {
-        
-
-
-        $course = $_POST["course_id"];
-
-    //    echo "course = " . $course;
-
-        $StrSQL = "SELECT * FROM subject WHERE sub_id like '%$course%'";
-      $result = $conn->query($StrSQL);
-
+              $course = $_POST["course_id"];
+              $StrSQL = "SELECT * FROM subject WHERE sub_id like '%$course%'";
+            $result = $conn->query($StrSQL);
 
       if (mysqli_num_rows($result) > 0) {
-
         echo "<table class=\"table table-hover\">";
         echo "<thead>";
         echo "<tr>";
@@ -122,7 +83,6 @@ if ($conn->connect_error) {
           echo "<td>". $row["sub_name"] ."</td>";
           echo "<td><a href=\"../action/addGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."\" <button type=\"button\" class=\"btn btn-info\"> เพิ่ม </button></a></td>";
           echo "</tr>";
-
         }
       } else {
         echo "<tr>";
@@ -131,37 +91,22 @@ if ($conn->connect_error) {
       }
       echo "</tbody>";
       echo "</table>";
-    
       mysqli_close($conn);
-
-
 
       }
         ?>
-
-
       </div>
-
-      
     </div>
-
-
-
   </div>
 </div>
 </form>
-
-
-
 <div class="container">
   <div class="panel-group">
-
     <div class="panel panel-primary">
       <div class="panel-heading">ข้อมูลการลงทะเบียนเรียน</div>
       <div class="panel-body">
       
       <?php
-
         $conn = new mysqli($servername, $username, $password, $dbname);
         mysqli_set_charset($conn,"utf8");
 
@@ -169,14 +114,9 @@ if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
           }
 
-
-
           $StrSQL = "SELECT * FROM grade WHERE user = '$user_login'  order by term_no, term_year";
           $result = $conn->query($StrSQL);
-    
-    
           if (mysqli_num_rows($result) > 0) {
-    
             echo "<table class=\"table table-striped\">";
             echo "<thead>";
             echo "<tr>";
@@ -200,7 +140,7 @@ if ($conn->connect_error) {
              echo "<a href=\"../action/editGrade.php?sub_id=". $row["sub_id"]."&sub_name=". $row["sub_name"]."&grade=".$row["grade"]."&term_no=".$row["term_no"]."&term_year=".$row["term_year"]."\" <button type=\"button\" class=\"btn btn-success\"> แก้ไข </button></a>";
 
              echo "</td>";
-              echo "</tr>";
+            echo "</tr>";
     
             }
           } else {
@@ -209,29 +149,11 @@ if ($conn->connect_error) {
             echo "</tr>";
           }
           echo "</tbody>";
-          echo "</table>";
-        
+          echo "</table>";   
           mysqli_close($conn);
-
-
-
-
       ?>
-      
-
-      
       </div>
     </div>
-
-
- 
   </div>
 </div>
-
-
-
-
-
-
-
 <?php include '../include/footer2.php';?>

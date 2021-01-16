@@ -65,16 +65,12 @@
           document.getElementById("sp_write_exam").style.display = "none";
 
           }
-         if(train == undefined ){
-          document.getElementById("sp_train").style.display = "block";
-        }else{
-          document.getElementById("sp_train").style.display = "none";
-
-          }
-         
-         
-         
-      }else{
+          if(train == undefined ){
+            document.getElementById("sp_train").style.display = "block";
+            }else{
+            document.getElementById("sp_train").style.display = "none";
+            }
+         }else{
         document.getElementById("sp_math").style.display = "none";
         document.getElementById("sp_m_edu").style.display = "none";
         document.getElementById("sp_age25").style.display = "none";
@@ -83,17 +79,11 @@
         document.getElementById("sp_online").style.display = "none";
         document.getElementById("sp_write_exam").style.display = "none";
         document.getElementById("sp_train").style.display = "none";
-
         document.getElementById("examForm").submit();
-
       }
-
     }
 
 </script>
-
-
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -102,38 +92,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="./m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./m_index.php">Home</a></li>
         <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
-
-
 <form method="post" action="../action/chkExam.php" id="examForm" >
-
 <div class="container">
   <h2>ทดสอบเบื้องต้น เรียนอะไรดี ใน มสธ</h2>
   <div class="panel-group">
@@ -154,7 +131,6 @@
         </div>
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">2.อายุ<span id="sp_age25" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -164,10 +140,8 @@
         <div class="radio">
           <label><input type="radio" name="age25" value="N"  required>ตั้งแต่ 25 ปีขึ้นไป</label>
         </div>
-
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">3.ชอบภาษาอังกฤษ<span id="sp_en" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -177,10 +151,8 @@
         <div class="radio">
           <label><input type="radio" name="en" value="N">ไม่ชอบ</label>
         </div>
-
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">4.ชอบคณิตศาสตร์<span id="sp_math" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -190,10 +162,8 @@
         <div class="radio">
           <label><input type="radio" name="math" value="N">ไม่ชอบ</label>
         </div>
-  
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">5.ชอบวิทยาศาสตร์<span id="sp_sci" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -203,10 +173,8 @@
         <div class="radio">
           <label><input type="radio" name="sci" value="N">ไม่ชอบ</label>
         </div>
- 
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">6.ชอบทำงานส่งออนไลน์<span id="sp_online" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -216,10 +184,8 @@
         <div class="radio">
           <label><input type="radio" name="online" value="N">ไม่ชอบ</label>
         </div>
- 
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">7.ชอบเขียนข้อสอบอัตนัย<span id="sp_write_exam" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
     <div class="panel-body">
@@ -229,10 +195,8 @@
         <div class="radio">
           <label><input type="radio" name="write_exam" value="N">ไม่ชอบ</label>
         </div>
- 
       </div>
     </div>
-
     <div class="panel panel-warning">
       <div class="panel-heading">8.สามารถลางานเข้าอบรมได้บ่อยๆ<span id="sp_train" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -242,23 +206,14 @@
         <div class="radio">
           <label><input type="radio" name="train" value="N">ไม่ชอบ</label>
         </div>
- 
-      </div>
-      
+      </div> 
     </div>
-
     <div>
     </div>
 <br>
-
-
-
 <div class="container text-center">
-
   <button type="button" class="btn btn-primary " onclick="validate();">ตรวจสอบสาขาวิชาที่เหมาะที่จะเรียน</button>
-  
 </div>
-
 <br>
 </form>
 <?php include '../include/footer2.php';?>

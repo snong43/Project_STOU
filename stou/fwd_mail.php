@@ -1,8 +1,4 @@
 <?php include 'include/header.php';?>
-
-
-
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -11,12 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-      </ul> 
+      <a class="navbar-brand" href="/stou"> รอบรู้ มสธ</a>
     </div>
   </div>
 </nav>
@@ -24,15 +15,9 @@
 <div class="container">
 <h2>ลืมรหัสผ่าน</h2>
   <form class="form-horizontal" action="action/forgetAction.php" method="post">
-
-
-
   <div class="panel panel-info">
       <div class="panel-heading">ข้อมูลสำหรับการขอรหัสผ่าน</div>
       <div class="panel-body">
-      
-      
-
       <div class="form-group">
       <label class="control-label col-sm-2" for="user_login">ชื่อผู้ใช้:</label>
       <div class="col-sm-10">
@@ -105,31 +90,16 @@
             </div>
       </div>
     </div>
-
-
-    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
   
         <button type="submit" class="btn btn-primary">ยืนยันตัวตน</button>
       </div>
     </div>
-
-
-
-
-
-
       </div>
     </div>
-
-
- 
   </form>
 </div>
-
 </div><br>
-
 <br><br>
-
 <?php include 'include/footer.php';?>

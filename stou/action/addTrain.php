@@ -8,46 +8,33 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="./m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./m_index.php">Home</a></li>
         <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="#">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
-
 <?php
 
         $sub_id = $_POST["sub_id"];
         $train_day = $_POST["train_day"];
         $course_id = $_POST["user_study"];
-
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "stou";
-
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         mysqli_set_charset($conn,"utf8");
@@ -59,10 +46,7 @@
         $StrSQL = "SELECT * FROM train WHERE sub_id = '$sub_id' and course_id = '$course_id'";
         $result = $conn->query($StrSQL);
 
-
-
         if ($result->num_rows == 0) {
-
           $StrSQL = "SELECT * FROM subject WHERE sub_id = '$sub_id'";
           $result2 = $conn->query($StrSQL);
           if ($result2->num_rows > 0) {
@@ -72,10 +56,8 @@
             if ($conn->query($StrSQL) === TRUE) {
                     // forward
                     $conn->close();
-  
                     header( "location: ../admin/a_course.php" );
                     exit(0);
-  
             } else {
                 // error
                 echo "<div class=\"container\">" ;    
@@ -95,7 +77,6 @@
               echo "</div>";
               echo "</div>";
               $conn->close();
-  
             } 
           }else{
              // error
@@ -117,10 +98,6 @@
            echo "</div>";
            $conn->close();
           }
-
-
-
-         
       }else{
         
           echo "<div class=\"container\">" ;    
@@ -140,20 +117,6 @@
         echo "</div>";
         echo "</div>";
         $conn->close();
-
       }
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
 <?php include '../include/footer2.php';?>

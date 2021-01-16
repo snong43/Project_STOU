@@ -8,55 +8,35 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="../m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="../m_index.php">Home</a></li>
         <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="./logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
 <?php
-
-$sub_id = $_GET["sub_id"];
-$sub_name = $_GET["sub_name"];
-
-
-
+  $sub_id = $_GET["sub_id"];
+  $sub_name = $_GET["sub_name"];
 ?>
-
 <div class="container">
 <h2>วิชาฝึกอบรม</h2>
   <form class="form-horizontal" action="addTrain.php" method="post">
-
-
-
   <div class="panel panel-info">
       <div class="panel-heading">วิชาฝึกอบรมใหม่</div>
       <div class="panel-body">
-      
       <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $sub_id; ?>" />
-
       <div class="form-group">
       <label class="control-label col-sm-2" >ชุดวิชา:</label>
       <div class="col-sm-10">
@@ -69,7 +49,6 @@ $sub_name = $_GET["sub_name"];
         <input type="text" class="form-control" id="train_day" placeholder="Enter days trainning" name="train_day">
       </div>
     </div>
-   
     <div class="form-group">
       <label class="control-label col-sm-2" for="user_study">สาขาวิชาที่เรียน:</label>
       <div class="col-sm-10">          
@@ -117,39 +96,15 @@ $sub_name = $_GET["sub_name"];
             </div>
       </div>
     </div>
-
-
-    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-  
         <button type="submit" class="btn btn-primary">บันทึกการฝึกอบรม</button>
       </div>
     </div>
-
-
-
-
-
-
       </div>
     </div>
-
-
- 
   </form>
 </div>
-
 </div><br>
-
 <br><br>
-
-
-
-
-
-
-
-
-
 <?php include '../include/footer2.php';?>

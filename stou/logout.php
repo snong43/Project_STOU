@@ -8,16 +8,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-      </ul> 
+      <a class="navbar-brand" href="/stou"> รอบรู้ มสธ</a>
     </div>
   </div>
 </nav>
-
 <?php
 // remove all session variables
 session_unset();
@@ -25,11 +19,10 @@ session_unset();
 // destroy the session
 session_destroy();
 ?>
-
 <div class="container">    
   <div class="row">
     <div class="col-sm-4">
- 
+
     </div>
     <div class="col-sm-4"> 
       <div class="panel panel-primary">
@@ -38,7 +31,6 @@ session_destroy();
             ออกจากระบบเรียบร้อยแล้ว
             <br>
             <a href="login.php"><button type="button" class="btn btn-primary">เข้าสู่ระบบ</button></a>
-
         </div>
         <div class="panel-footer"></div>
       </div>
@@ -48,7 +40,4 @@ session_destroy();
     </div>
   </div>
 </div><br>
-
-
-
 <?php include 'include/footer3.php';?>

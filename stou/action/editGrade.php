@@ -61,21 +61,17 @@ echo "sub_id = " . $sub_id;
        
 
 
-        <form class="form-horizontal" action="upGrade.php" method="post">
+    <form class="form-horizontal" action="upGrade.php" method="post">
       <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $sub_id;?>" />
-
     <div class="form-group">
       <label class="control-label col-sm-2">ชุดวิชา :</label>
       <label class="control-label col-sm-10" style="text-align: left !important">  <?php echo $_GET["sub_id"] . " " .  $_GET["sub_name"] ; ?></label>
     </div>
     <div class="form-group">
-
-
       <label class="control-label col-sm-2" for="term_no">ภาคเรียน :</label>
       <div class="col-sm-1">          
       <select class="form-control" id="term_no" name="term_no">
         <?php
-        
             if($term_no == "1"){
                 echo "<option value=\"1\" selected>1</option>";
 
@@ -101,14 +97,10 @@ echo "sub_id = " . $sub_id;
         ?>
       </select>
       </div>
-
       <label class="control-label col-sm-1" for="term_year">/</label>
       <div class="col-sm-2">          
       <select class="form-control" id="term_year" name="term_year">
       <?php  
-
-
-
         if($term_year == "2564"){
             echo "<option value=\"2564\" selected>2564</option>";
 
@@ -232,13 +224,7 @@ echo "sub_id = " . $sub_id;
         }else{
             echo "<option value=\"2550\">2550</option>";
         }
-
         ?>
-
- 
-       
-        
-
       </select>
       </div>
       <label class="control-label col-sm-2" for="grade">ผลการเรียน :</label>
@@ -259,29 +245,20 @@ echo "sub_id = " . $sub_id;
               }
           
       ?>
-
       </select>
       </div>
-
       <label class="control-label col-sm-3" > </label>
-
-
     </div>
-
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-success">บันทึกผลการเรียน</button>  <a href="delGrade.php?sub_id=<?php echo $sub_id;?>"><button type="button" class="btn btn-danger">ลบรายการนี้</button></a>
       </div>
     </div>
   </form>
-
-
         </div>
         <div class="panel-footer"></div>
       </div>
     </div>
-
   </div>
 </div><br>
-
 <?php include '../include/footer2.php';?>

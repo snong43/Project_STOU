@@ -9,11 +9,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="./m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./m_index.php">Home</a></li>
         <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
@@ -21,50 +20,36 @@
 
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
-
-
 <?php
+  $course_id = $_POST["course_id"];
+  $en = $_POST["en"];
+  $math = $_POST["math"];
+  $sci = $_POST["sci"];
+  $write_exam = $_POST["write_exam"];
+  $train = $_POST["train"];
+  $m_edu = $_POST["m_edu"];
+  $age25 = $_POST["age25"];
+  $online = $_POST["online"];
 
+  $servername = "localhost";
+  $username = "root";
+  $password = "";
+  $dbname = "stou";
 
-$course_id = $_POST["course_id"];
-$en = $_POST["en"];
-$math = $_POST["math"];
-$sci = $_POST["sci"];
-$write_exam = $_POST["write_exam"];
-$train = $_POST["train"];
-$m_edu = $_POST["m_edu"];
-$age25 = $_POST["age25"];
-$online = $_POST["online"];
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  mysqli_set_charset($conn,"utf8");
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "stou";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn,"utf8");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
 
 $StrSQL = "UPDATE course  SET  en =  '$en' , "  .
             " math =  '$math' , " .
@@ -75,8 +60,6 @@ $StrSQL = "UPDATE course  SET  en =  '$en' , "  .
             " online =  '$online' , " .
             " age25 =  '$age25'  " .
             " WHERE course_id = '$course_id'";
-
-   //       echo " <br> SQL = <br>" . $StrSQL;
 
             if ($conn->query($StrSQL) === TRUE) {
                 echo "<div class=\"container\">" ;    
@@ -112,16 +95,7 @@ $StrSQL = "UPDATE course  SET  en =  '$en' , "  .
               echo "<div class=\"col-sm-4\"></div>";
               echo "</div>";
               echo "</div>";
-
-
               }
-
-              
-
-
 $conn->close();
 ?>
-
-
-
 <?php include '../include/footer2.php';?>
