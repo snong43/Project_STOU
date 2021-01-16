@@ -358,4 +358,6 @@ if ($result->num_rows > 0) {
   $conn->close();
 
 ?>
+<span class="pull-right">STOU.ME05</span>
+
 <?php include '../include/footer2.php';?>

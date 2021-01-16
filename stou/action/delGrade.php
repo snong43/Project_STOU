@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,31 +16,19 @@
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="./logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
 <?php
-
-
     $sub_id = $_GET["sub_id"];
     $user_login = $_SESSION["user"] ;
-
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -49,11 +36,6 @@
 
     $conn = new mysqli($servername, $username, $password, $dbname);
     mysqli_set_charset($conn,"utf8");
-
-
-
-
-
     // sql to delete a record
 $sql = "DELETE FROM grade WHERE user='$user_login' and sub_id = '$sub_id'";
 
@@ -61,7 +43,6 @@ if ($conn->query($sql) === TRUE) {
     $conn->close();
     header( "location: ../member/m_grade.php" );
     exit(0);
-
 } else {
   echo "<div class=\"container\">" ;    
   echo "<div class=\"row\">";
@@ -79,19 +60,9 @@ if ($conn->query($sql) === TRUE) {
 echo "<div class=\"col-sm-4\"></div>";
 echo "</div>";
 echo "</div>";
-
   $conn->close();
-
 }
-
-
-
 ?>
-
-
-
-
-
-
+<span class="pull-right">STOU.AC07</span>
 
 <?php include '../include/footer2.php';?>

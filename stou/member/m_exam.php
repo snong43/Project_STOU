@@ -216,4 +216,6 @@
 </div>
 <br>
 </form>
+<span class="pull-right">STOU.ME03</span>
+
 <?php include '../include/footer2.php';?>

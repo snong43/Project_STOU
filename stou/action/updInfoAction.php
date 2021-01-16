@@ -91,4 +91,6 @@
               }
 $conn->close();
 ?>
+<span class="pull-right">STOU.AC20</span>
+
 <?php include '../include/footer2.php';?>

@@ -103,6 +103,7 @@
   </div>
 </div><br>
 
+<span class="pull-right">STOU.ME01</span>
 
 
 <?php include '../include/footer2.php';?>

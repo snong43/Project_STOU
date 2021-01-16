@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,19 +16,12 @@
     </div>
   </div>
 </nav>
-
-
 <div class="container">    
   <div class="row">
-
     <div class="col-sm-12"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">เพิ่มข้อมูลการลงทะเบียนเรียน</div>
         <div class="panel-body">
-        
-       
-
-
         <form class="form-horizontal" action="insert_grade.php">
         <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $_GET["sub_id"];  ?>" />
         <input type="hidden" id="sub_name" name="sub_name" value="<?php echo $_GET["sub_name"];  ?>" />
@@ -38,8 +30,6 @@
       <label class="control-label col-sm-10" style="text-align: left !important">  <?php echo $_GET["sub_id"] . " " .  $_GET["sub_name"] ; ?></label>
     </div>
     <div class="form-group">
-
-
       <label class="control-label col-sm-2" for="term_no">ภาคเรียน :</label>
       <div class="col-sm-1">          
       <select class="form-control" id="term_no" name="term_no">
@@ -48,7 +38,6 @@
         <option value="3">3</option>
       </select>
       </div>
-
       <label class="control-label col-sm-1" for="term_year">/</label>
       <div class="col-sm-2">          
       <select class="form-control" id="term_year" name="term_year">
@@ -67,7 +56,6 @@
         <option value="2552">2552</option>
         <option value="2551">2551</option>
         <option value="2550">2550</option>
-
       </select>
       </div>
       <label class="control-label col-sm-2" for="grade">ผลการเรียน :</label>
@@ -82,35 +70,20 @@
         <option value="H*">H*</option>
       </select>
       </div>
-
       <label class="control-label col-sm-3" > </label>
-
-
     </div>
-
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <button type="submit" class="btn btn-primary">บันทึกผลการเรียน</button>
       </div>
     </div>
   </form>
-
-
         </div>
         <div class="panel-footer"></div>
       </div>
     </div>
-
   </div>
 </div><br>
-
-<?php
-
-// select table grade
-
-
-
-?>
-
+<span class="pull-right">STOU.AC02</span>
 
 <?php include '../include/footer2.php';?>

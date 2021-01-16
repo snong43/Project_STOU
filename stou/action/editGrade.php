@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,50 +16,30 @@
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="#">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
 <?php
-
-$term_no = $_GET["term_no"];
-$term_year = $_GET["term_year"];
-$sub_id = $_GET["sub_id"];
-$sub_name = $_GET["sub_name"];
-$grade = $_GET["grade"];
-$user_login = $_SESSION["user"];
-
-
-echo "sub_id = " . $sub_id;
-
+    $term_no = $_GET["term_no"];
+    $term_year = $_GET["term_year"];
+    $sub_id = $_GET["sub_id"];
+    $sub_name = $_GET["sub_name"];
+    $grade = $_GET["grade"];
+    $user_login = $_SESSION["user"];
 ?>
-
 <div class="container">    
   <div class="row">
-
     <div class="col-sm-12"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">แก้ไขข้อมูลการลงทะเบียนเรียน</div>
         <div class="panel-body">
-    
-       
-
-
     <form class="form-horizontal" action="upGrade.php" method="post">
       <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $sub_id;?>" />
     <div class="form-group">
@@ -93,7 +72,6 @@ echo "sub_id = " . $sub_id;
                 echo "<option value=\"3\">3</option>";
 
             }
-
         ?>
       </select>
       </div>
@@ -243,7 +221,6 @@ echo "sub_id = " . $sub_id;
 
                 }
               }
-          
       ?>
       </select>
       </div>
@@ -261,4 +238,6 @@ echo "sub_id = " . $sub_id;
     </div>
   </div>
 </div><br>
+<span class="pull-right">STOU.AC08</span>
+
 <?php include '../include/footer2.php';?>

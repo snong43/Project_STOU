@@ -82,5 +82,6 @@
   </div>
 
 
+  <span class="pull-right">STOU.ME02</span>
 
   <?php include '../include/footer2.php';?>

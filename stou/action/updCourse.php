@@ -94,4 +94,6 @@ $StrSQL = "UPDATE subject  SET  sub_name =  '$sub_name' , "  .
               }
 $conn->close();
 ?>
+<span class="pull-right">STOU.A1C8</span>
+
 <?php include '../include/footer2.php';?>

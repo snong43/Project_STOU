@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,7 +16,6 @@
     </div>
   </div>
 </nav>
-
 <?php
 $user = $_POST["user_login"];
 $pass = $_POST["user_pwd"];
@@ -52,9 +50,6 @@ if ($result->num_rows > 0) {
     header( "location: ../m_index.php" );
   }
   exit(0);
-
-  
-
 } else {
     echo "<div class=\"container\">" ;    
     echo "<div class=\"row\">";
@@ -74,11 +69,7 @@ if ($result->num_rows > 0) {
   echo "</div>";
 }
 $conn->close();
-
-
-
-
-
 ?>
+<span class="pull-right">STOU.AC05</span>
 
 <?php include '../include/footer2.php';?>

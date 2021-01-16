@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -17,48 +16,30 @@
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="#">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
 <?php
-
         $sub_id = $_POST["sub_id"];
         $sub_name = $_POST["sub_name"];
         $term_no = $_POST["term_no"];
         $term_all = "";
- 
-
-        echo "term_no =" . "$term_no";
-        echo "sub_name =" . "$sub_name";
-        echo "term_no =" . "$term_no";
-
         if("12" == "$term_no"){
             $term_all = "Y";
         }else{
             $term_all = "N";
         }
-
         $servername = "localhost";
         $username = "root";
         $password = "";
         $dbname = "stou";
-
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         mysqli_set_charset($conn,"utf8");
@@ -70,8 +51,6 @@
         $StrSQL = "SELECT * FROM subject WHERE sub_id = '$sub_id'";
         $result = $conn->query($StrSQL);
 
-
-
         if ($result->num_rows == 0) {
             $StrSQL = "INSERT INTO subject (sub_id, sub_name, term_no, term_all )
             VALUES ('$sub_id', '$sub_name', '$term_no', '$term_all')";
@@ -79,10 +58,8 @@
             if ($conn->query($StrSQL) === TRUE) {
                     // forward
                     $conn->close();
-
                     header( "location: ../admin/a_course.php" );
                     exit(0);
-
             } else {
                 // error
                 echo "<div class=\"container\">" ;    
@@ -102,10 +79,8 @@
               echo "</div>";
               echo "</div>";
               $conn->close();
-
             } 
         }else{
-          
             echo "<div class=\"container\">" ;    
             echo "<div class=\"row\">";
             echo "<div class=\"col-sm-4\"></div>";
@@ -123,14 +98,8 @@
           echo "</div>";
           echo "</div>";
           $conn->close();
-
         }
-
-
-
 ?>
-
-
-
+<span class="pull-right">STOU.AC10</span>
 
 <?php include '../include/footer2.php';?>

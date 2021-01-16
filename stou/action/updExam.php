@@ -98,4 +98,6 @@ $StrSQL = "UPDATE course  SET  en =  '$en' , "  .
               }
 $conn->close();
 ?>
+<span class="pull-right">STOU.AC19</span>
+
 <?php include '../include/footer2.php';?>

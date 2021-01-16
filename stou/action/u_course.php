@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -8,51 +7,36 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="../m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="../m_index.php">Home</a></li>
         <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
         <li><a href="#">สนใจเรียน</a></li>
         <li><a href="#">กิจกรรม</a></li>
         <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-
         <li><a href="#">ทดสอบตัวเอง</a></li>
         <li><a href="#">ติดต่อ</a></li>
-
-
-
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
         <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="./logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
 <?php
-
     $sub_id = $_GET["sub_id"];
     $sub_name = $_GET["sub_name"];
     $term_no = $_GET["term_no"];
-
 ?>
 <div class="container">
 <h2>ปรับปรุงข้อมูล</h2>
   <form class="form-horizontal" action="updCourse.php" method="post">
-
   <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $sub_id;  ?>" />
-
   <div class="panel panel-info">
       <div class="panel-heading">Edit Course</div>
       <div class="panel-body">
-  
       <div class="form-group">
       <label class="control-label col-sm-2" >รหัสชุดวิชา:</label>
       <div class="col-sm-10">
@@ -66,7 +50,6 @@
         <input type="text" class="form-control" id="sub_name" placeholder="Enter Subject Name" name="sub_name" value= "<?php echo $sub_name; ?>">
       </div>
     </div>
-
     <div class="form-group">
       <label class="control-label col-sm-2" for="term_no">เปิดภาคเรียน:</label>
       <div class="col-sm-10">
@@ -123,5 +106,6 @@
 
 
 
+<span class="pull-right">STOU.AC13</span>
 
 <?php include '../include/footer2.php';?>

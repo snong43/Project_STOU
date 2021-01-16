@@ -62,4 +62,6 @@ if ($conn->query($sql) === TRUE) {
   $conn->close();
 }
 ?>
+<span class="pull-right">STOU.AC17</span>
+
 <?php include '../include/footer2.php';?>
