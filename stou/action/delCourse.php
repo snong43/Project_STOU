@@ -68,7 +68,7 @@ echo "</div>";
 
 
 
-<span class="pull-right">STOU.AC06</span>
+<span class="pull-right">STOU.AC06</span><h3>Online</h3><h1>Test</h1>
 
 
 <?php include '../include/footer2.php';?>

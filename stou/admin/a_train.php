@@ -36,7 +36,7 @@
         die("Connection failed: " . $conn->connect_error);
       }
 ?>
-<form class="form-horizontal" action="./a_train.php" method="post">
+<form class="form-horizontal" action="a_train.php" method="post">
 <div class="container">
   <div class="panel-group">
     <div class="panel panel-info">
@@ -58,8 +58,9 @@
           if(isset($_POST["BtnSearch"])) {
         $sub_id = $_POST["sub_id"];
         $StrSQL = "SELECT s.sub_id, s.sub_name, c.course_id, c.course_name, t.train_day FROM train t JOIN subject s " .
-        " ON t.sub_id = s.sub_id JOIN course c ON t.course_id = c.course_id WHERE s.sub_id = '$sub_id'";
-      $result = $conn->query($StrSQL);
+        " ON t.sub_id = s.sub_id JOIN course c ON t.course_id = c.course_id WHERE s.sub_id like '%$sub_id%'";
+
+     $result = $conn->query($StrSQL);
 
       if (mysqli_num_rows($result) > 0) {
         echo "<table class=\"table table-hover\">";
@@ -93,7 +94,7 @@
       }
       echo "</tbody>";
       echo "</table>";
-      mysqli_close($conn);
+      mysqli_close($conn); 
       }
         ?>
       </div>
@@ -102,5 +103,4 @@
 </div>
 </form>
 <span class="pull-right">STOU.AD03</span>
-
 <?php include '../include/footer2.php';?>

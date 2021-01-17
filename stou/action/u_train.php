@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -11,13 +10,10 @@
       <a class="navbar-brand" href="../m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
-        <li><a href="#">สนใจเรียน</a></li>
-        <li><a href="#">กิจกรรม</a></li>
-        <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="#">ทดสอบตัวเอง</a></li>
-        <li><a href="#">ติดต่อ</a></li>
+    <ul class="nav navbar-nav">
+        <li ><a href="../admin/a_course.php">หลักสูตร</a></li>
+        <li class="active"><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
+        <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -54,7 +50,6 @@
       <div class="col-sm-10">          
         <div class="form-group col-sm-12">
                 <select class="input-large form-control"  name="user_study" id="user_study">
-                    <option value="">เลือกสาขาวิชา</option>
                     <option value="01">01 : สาขาวิชาศิลปศาสตร์ - ไทยคดีศึกษา</option>
                     <option value="02">02 : สาขาวิชาศิลปศาสตร์ - สารสนเทศทั่วไป</option>
                     <option value="03">03 : สาขาวิชาศิลปศาสตร์ - สารสนเทศสำนักงาน</option>
@@ -107,6 +102,6 @@
 </div>
 </div><br>
 <br><br>
-<span class="pull-right">STOU.AC15</span>
+<span class="pull-right">STOU.AC16</span>
 
 <?php include '../include/footer2.php';?>

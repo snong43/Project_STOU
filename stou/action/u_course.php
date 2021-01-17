@@ -11,12 +11,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
-        <li><a href="#">สนใจเรียน</a></li>
-        <li><a href="#">กิจกรรม</a></li>
-        <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="#">ทดสอบตัวเอง</a></li>
-        <li><a href="#">ติดต่อ</a></li>
+      <li class="active"><a href="../admin/a_course.php">หลักสูตร</a></li>
+        <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
+        <li ><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -73,39 +70,22 @@
             }else{
               echo "<option value=\"2\">ทุกเทอม</option>";
             }
-
           ?>
-           
         </select>
       </div>
     </div>
-  
-
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-  
         <button type="submit" class="btn btn-primary" name="btnSave">บันทึกชุดวิชาเรียน</button>
-
+        <a href="../action/u_del_course.php?sub_id=<?php echo $sub_id; ?>"><button type="button" class="btn btn-danger" name="btnSave">ลบชุดวิชา</button></a>
         <a href="../action/u_train.php?sub_id=<?php echo $sub_id; ?>&sub_name=<?php echo $sub_name; ?>"><button type="button" class="btn btn-success" >ชุดวิชาฝึกอบรม</button></a>
       </div>
     </div>
-
-
       </div>
     </div>
-
-
-
   </form>
 </div>
-
 </div><br>
-
 <br><br>
-
-
-
-
 <span class="pull-right">STOU.AC13</span>
-
 <?php include '../include/footer2.php';?>

@@ -7,12 +7,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="./m_index.php"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="../m_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="./admin/a_course.php">หลักสูตร</a></li>
-        <li><a href="./admin/a_member.php">ข้อมูลสมาชิก</a></li>
+      <li><a href="../admin/a_course.php">หลักสูตร</a></li>
+        <li class="active"><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
+        <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -65,6 +66,6 @@
 </div>
 </div><br>
 <br><br>
-<span class="pull-right">STOU.AC16</span>
+<span class="pull-right">STOU.AC17</span>
 
 <?php include '../include/footer2.php';?>

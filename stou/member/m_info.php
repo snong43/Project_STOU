@@ -12,16 +12,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">ข้อมูลสมาชิก</a></li>
-        <li><a href="#">ปฏิทิน</a></li>
-        <li><a href="#">สนใจเรียน</a></li>
-        <li><a href="#">กิจกรรม</a></li>
-        <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="#">ทดสอบตัวเอง</a></li>
-        <li><a href="#">ติดต่อ</a></li>
+      <li><a href="../admin/a_course.php">หลักสูตร</a></li>
+        <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
+        <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">     
-        <li><a href="./m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li  class="active"><a href="m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
@@ -62,16 +58,12 @@ if ($result->num_rows > 0) {
     }
   } 
 ?>
-
-
 <div class="container">
 <h2>ข้อมูลส่วนตัว</h2>
   <form class="form-horizontal" action="../action/updInfoAction.php" method="post">
-
   <div class="panel panel-info">
       <div class="panel-heading">รายละเอียด</div>
       <div class="panel-body">
-      
       <div class="form-group">
       <label class="control-label col-sm-2" for="user_login">ชื่อผู้ใช้:</label>
       <div class="col-sm-10">
@@ -319,45 +311,20 @@ if ($result->num_rows > 0) {
             </div>
       </div>
     </div>
-
-
-    
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-  
         <a href="../m_index.php"><button type="button" class="btn btn-primary">กลับสู่เมนูหลัก</button></a>
         <button type="submit" class="btn btn-primary">บันทึกการแก้ไขข้อมูล</button>
       </div>
     </div>
-
-
-
-
-
-
       </div>
     </div>
-
-
- 
   </form>
 </div>
-
 </div><br>
-
 <br><br>
-
-
-
-
-
-
-
-
 <?php
   $conn->close();
-
 ?>
 <span class="pull-right">STOU.ME05</span>
-
 <?php include '../include/footer2.php';?>

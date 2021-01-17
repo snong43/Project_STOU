@@ -9,11 +9,7 @@
       </button>
       <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-      </ul> 
-    </div>
+
   </div>
 </nav>
 <div class="container">    
@@ -84,6 +80,6 @@
     </div>
   </div>
 </div><br>
-<span class="pull-right">STOU.AC02</span>
+<span class="pull-right">STOU.AC02</span><h3>Online</h3><h1>Test</h1>
 
 <?php include '../include/footer2.php';?>
