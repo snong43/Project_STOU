@@ -7,11 +7,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="../index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
       </ul> 
     </div>
   </div>
@@ -79,13 +78,7 @@
               ?>
           </div>
             <?php
-             echo "<br>user_login = " . $user_login . "<br>";
-            echo "user_pwd = " . $user_pwd . "<br>";
-            echo "user_id = " . $user_id . "<br>";
-            echo "user_name = " . $user_name . "<br>";
-            echo "user_email = " . $user_email . "<br>";
-            echo "user_study = " . $user_study . "<br>";
-            echo "date = " . $date . "<br>";
+
             $conn->close();
               ?>
         </div>
@@ -96,6 +89,6 @@
     </div>
   </div>
 </div>
-<span class="pull-right">STOU.AC12</span><h3>Online</h3><h1>Test</h1>
+<span class="pull-right">STOU.AC12</span>
 
 <?php  include '../include/footer2.php';?>

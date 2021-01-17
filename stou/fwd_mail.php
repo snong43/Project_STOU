@@ -31,12 +31,7 @@
         <input type="number" class="form-control" id="user_id" placeholder="Enter STOU ID" name="user_id">
       </div>
     </div>
-    <div class="form-group">
-      <label class="control-label col-sm-2" for="user_name">ชื่อ-นามสกุล:</label>
-      <div class="col-sm-10">          
-        <input type="text" class="form-control" id="user_name" placeholder="Enter Name" name="user_name">
-      </div>
-    </div>
+
     <div class="form-group">
       <label class="control-label col-sm-2" for="user_email">อีเมลล์:</label>
       <div class="col-sm-10">
