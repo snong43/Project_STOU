@@ -103,5 +103,4 @@
 </div><br>
 <br><br>
 <span class="pull-right">STOU.AC16</span>
-
 <?php include '../include/footer2.php';?>

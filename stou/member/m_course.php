@@ -1,5 +1,4 @@
 <?php include '../include/header2.php';?>
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -12,34 +11,23 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
-        <li><a href="#">สนใจเรียน</a></li>
-        <li><a href="#">กิจกรรม</a></li>
-        <li><a href="./member/m_grade.php">บันทึกผลการเรียน</a></li>
-
-        <li><a href="#">ทดสอบตัวเอง</a></li>
-        <li><a href="#">ติดต่อ</a></li>
-
-
-
+      <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/calendar">ปฏิทิน</a></li>
+        <li class="active"><a href="../member/m_course.php">สนใจเรียน</a></li>
+        <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
+        <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
+        <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
-
-
-
     </div>
   </div>
 </nav>
-
-
-
 <div class="container">    
   <div class="row">
-
     <div class="col-sm-6"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">หลักสูตรปริญญาตรี ปีการศึกษา ล่าสุด</div>
@@ -52,8 +40,6 @@
               <p><a href="https://www.stou.ac.th/Courses/index55.htm">หลักสูตรปีการศึกษา 2555</a></p>
               <p><a href="https://www.stou.ac.th/Courses/index56.htm">หลักสูตรปีการศึกษา 2556</a></p>
               <p><a href="https://www.stou.ac.th/Courses/index57.htm">หลักสูตรปีการศึกษา 2557</a></p>
-
-
           </div>
           <div class="col-sm-6"> 
               <p><a href="https://www.stou.ac.th/Courses/index58.htm">หลักสูตรปีการศึกษา 2558</a></p>
@@ -62,10 +48,7 @@
               <p><a href="https://www.stou.ac.th/Courses/index61.htm">หลักสูตรปีการศึกษา 2561</a></p>
               <p><a href="https://www.stou.ac.th/Courses/index.htm">หลักสูตรปีการศึกษา 2562</a></p>
               <p><a href="https://www.stou.ac.th/main/curriculums.html">หลักสูตรปีการศึกษา 2563</a></p>
-    
           </div>
-
-        
         </div>
         <div class="panel-footer"></div>
       </div>
@@ -82,9 +65,6 @@
               <p><a href="https://www.stou.ac.th/Courses/C_master56.htm">หลักสูตรปีการศึกษา 2556</a></p>
               <p><a href="https://www.stou.ac.th/Courses/C_master57.htm">หลักสูตรปีการศึกษา 2557</a></p>
               <p><a href="https://www.stou.ac.th/Courses/C_master58.htm">หลักสูตรปีการศึกษา 2558</a></p>
-
-
-
           </div>
           <div class="col-sm-6"> 
               <p><a href="https://www.stou.ac.th/Courses/C_master59.htm">หลักสูตรปีการศึกษา 2559</a></p>
@@ -93,8 +73,6 @@
               <p><a href="https://www.stou.ac.th/Courses/C_master62.htm">หลักสูตรปีการศึกษา 2562</a></p>
               <p><a href="https://www.stou.ac.th/Courses/C_master63.htm">หลักสูตรปีการศึกษา 2563</a></p>
               <p><a href="https://www.stou.ac.th/main/curriculums2.html">หลักสูตรปีการศึกษา 2564</a></p>
-
-    
           </div>
         </div>
         <div class="panel-footer"></div>
@@ -102,8 +80,5 @@
     </div>
   </div>
 </div><br>
-
-<span class="pull-right">STOU.ME01</span><h3>Online</h3><h1>Test</h1>
-
-
+<span class="pull-right">STOU.ME01</span>
 <?php include '../include/footer2.php';?>

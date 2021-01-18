@@ -74,6 +74,6 @@ if ($conn->query($sql) === TRUE) {
   $conn->close();
 }
 ?>
-<span class="pull-right">STOU.AC22</span><h3>Online</h3><h1>Test</h1>
+<span class="pull-right">STOU.AC23</span><h3>Online</h3><h1>Test</h1>
 
 <?php include '../include/footer2.php';?>

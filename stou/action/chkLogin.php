@@ -70,6 +70,6 @@ if ($result->num_rows > 0) {
 }
 $conn->close();
 ?>
-<span class="pull-right">STOU.AC05</span><h3>Online</h3><h1>Test</h1>
+<span class="pull-right">STOU.AC05</span>
 
 <?php include '../include/footer2.php';?>

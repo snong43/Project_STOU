@@ -102,5 +102,5 @@
   </div>
 </div>
 </form>
-<span class="pull-right">STOU.AD03</span>
+<span class="pull-right">STOU.AD04</span>
 <?php include '../include/footer2.php';?>

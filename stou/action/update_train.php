@@ -59,6 +59,6 @@ if ($conn->query($sql) === TRUE) {
   $conn->close();
 }
 ?>
-<span class="pull-right">STOU.AC18</span>
+<span class="pull-right">STOU.AC19</span>
 
 <?php include '../include/footer2.php';?>

@@ -11,47 +11,49 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../admin/a_course.php">หลักสูตร</a></li>
-        <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
-        <li ><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
+      <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/calendar">ปฏิทิน</a></li>
+        <li><a href="../member/m_course.php">สนใจเรียน</a></li>
+        <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
+        <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
+        <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
   </div>
 </nav>
-
 <?php
-  $sub_id = $_POST["sub_id"];
-  $sub_name = $_POST["sub_name"];
-  $term_no = $_POST["term_no"];
-  $term_all = "";
+  $user_login = $_SESSION["user"] ;
+  $user_pwd = $_POST["user_pwd"];
+  $user_id = $_POST["user_id"];
+  $user_name = $_POST["user_name"];
+  $user_email = $_POST["user_email"];
+  $user_study = $_POST["user_study"];
+  $date = date('Y-m-d H:i:s');
+  $msg = "";
+  $fwPage = "";
 
   $servername = "localhost";
   $username = "root";
   $password = "";
   $dbname = "stou";
 
-  if("12" == "$term_no" ){
-      $term_all = "Y";
-  }else{
-      $term_all = "N";
-  }
+  $conn = new mysqli($servername, $username, $password, $dbname);
+  mysqli_set_charset($conn,"utf8");
 
-$conn = new mysqli($servername, $username, $password, $dbname);
-mysqli_set_charset($conn,"utf8");
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+    }
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-
-$StrSQL = "UPDATE subject  SET  sub_name =  '$sub_name' , "  .
-            " term_no =  '$term_no' , " .
-            " term_all =  '$term_all'  " .
-            " WHERE sub_id = '$sub_id'";
-
+    $StrSQL = "UPDATE user  SET  pass =  '$user_pwd' , "  .
+            " stou_id =  '$user_id' , " .
+            " name =  '$user_name' , " .
+            " email =  '$user_email' , " .
+            " study =  '$user_study ' " .
+            " WHERE user = '$user_login'";
             if ($conn->query($StrSQL) === TRUE) {
                 echo "<div class=\"container\">" ;    
                 echo "<div class=\"row\">";
@@ -60,8 +62,8 @@ $StrSQL = "UPDATE subject  SET  sub_name =  '$sub_name' , "  .
                    echo "<div class=\"panel panel-success\">";
                      echo "<div class=\"panel-heading text-center\"> Update Success</div>";
                        echo "<div class=\"panel-body text-center\">";
-                        echo "แก้ไขข้อมูลเรียบร้อยแล้ว<br>  <br>";
-                        echo "<a href=\"../admin/a_course.php\"><button type=\"button\" class=\"btn btn-primary\">ไปหน้าชุดวิชาเรียน</button></a>";
+                        echo "แก้ไขข้อมูลเรียบร้อยแล้ว<br> กรุณาเข้าระบบอีกครั้ง <br>";
+                        echo "<a href=\"../login.php\"><button type=\"button\" class=\"btn btn-primary\">เข้าระบบใหม่</button></a>";
                         echo "</div>";
                       echo "<div class=\"panel-footer\"></div>";
                    echo "</div>";
@@ -77,8 +79,8 @@ $StrSQL = "UPDATE subject  SET  sub_name =  '$sub_name' , "  .
                    echo "<div class=\"panel panel-danger\">";
                      echo "<div class=\"panel-heading text-center\"> Update Fail</div>";
                        echo "<div class=\"panel-body text-center\">";
-                        echo "ปรับปรุงข้อมูลผิดพลาด<br>  <br>". $conn->error;
-                        echo "<a href=\"../admin/a_course.php\"><button type=\"button\" class=\"btn btn-primary\">ไปหน้าชุดวิชาเรียน</button></a>";
+                        echo "ปรับปรุงข้อมูลผิดพลาด<br> กลับสู่หน้าประวัติส่วนตัวอีกครั้ง <br>". $conn->error;
+                        echo "<a href=\"../login.php\"><button type=\"button\" class=\"btn btn-primary\">กลับหน้าเกี่ยวกับอีกครั้ง</button></a>";
                         echo "</div>";
                       echo "<div class=\"panel-footer\"></div>";
                    echo "</div>";
@@ -89,5 +91,5 @@ $StrSQL = "UPDATE subject  SET  sub_name =  '$sub_name' , "  .
               }
 $conn->close();
 ?>
-<span class="pull-right">STOU.AC20</span>
+<span class="pull-right">STOU.AC22</span>
 <?php include '../include/footer2.php';?>

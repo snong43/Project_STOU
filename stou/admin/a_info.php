@@ -12,12 +12,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/calendar">ปฏิทิน</a></li>
-        <li><a href="../member/m_course.php">สนใจเรียน</a></li>
-        <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
-        <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
-        <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
+      <li><a href="../admin/a_course.php">หลักสูตร</a></li>
+        <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
+        <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">     
         <li  class="active"><a href="m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -63,7 +60,7 @@ if ($result->num_rows > 0) {
 ?>
 <div class="container">
 <h2>ข้อมูลส่วนตัว</h2>
-  <form class="form-horizontal" action="../action/updCusInfoAction.php" method="post">
+  <form class="form-horizontal" action="../action/updAdInfoAction.php" method="post">
   <div class="panel panel-info">
       <div class="panel-heading">รายละเอียด</div>
       <div class="panel-body">
@@ -329,5 +326,5 @@ if ($result->num_rows > 0) {
 <?php
   $conn->close();
 ?>
-<span class="pull-right">STOU.ME05</span>
+<span class="pull-right">STOU.A04</span>
 <?php include '../include/footer2.php';?>

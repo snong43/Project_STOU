@@ -11,14 +11,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="./m_index.php">Home</a></li>
-        <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/">ปฏิทิน</a></li>
-        <li><a href="#">สนใจเรียน</a></li>
-        <li><a href="#">กิจกรรม</a></li>
-        <li><a href="#">บันทึกผลการเรียน</a></li>
-
-        <li><a href="#">ทดสอบตัวเอง</a></li>
-        <li><a href="#">ติดต่อ</a></li>
+      <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/calendar">ปฏิทิน</a></li>
+        <li><a href="../member/m_course.php">สนใจเรียน</a></li>
+        <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
+        <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
+        <li class="active"><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -156,6 +154,6 @@
     </div>
   </div>
 </div>
-<span class="pull-right">STOU.ME04</span><h3>Online</h3><h1>Test</h1>
+<span class="pull-right">STOU.ME04</span>
 
 <?php include '../include/footer2.php';?>
