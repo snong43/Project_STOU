@@ -15,7 +15,7 @@
         <li><a href="member/m_course.php">สนใจเรียน</a></li>
         <li><a href="member/m_day_train.php">วิชาอบรม</a></li>
         <li><a href="member/m_exam.php">ทดสอบตัวเอง</a></li>
-        <li><a href="member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li class="active"><a href="member/m_grade.php">บันทึกผลการเรียน</a></li>
         <li><a href="member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -227,7 +227,8 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success">บันทึกผลการเรียน</button>  <a href="delGrade.php?sub_id=<?php echo $sub_id;?>"><button type="button" class="btn btn-danger">ลบรายการนี้</button></a>
+        <button type="submit" class="btn btn-success">บันทึกผลการเรียน</button>  
+        <a href="delGrade.php?sub_id=<?php echo $sub_id;?>"><button type="button" class="btn btn-danger">ลบรายการนี้</button></a>
       </div>
     </div>
   </form>
@@ -237,6 +238,6 @@
     </div>
   </div>
 </div><br>
-<span class="pull-right">STOU.AC08</span><h3>Online</h3><h1>Test</h1>
+<span class="pull-right">STOU.AC08</span>
 
 <?php include '../include/footer2.php';?>

@@ -98,6 +98,6 @@
           $conn->close();
         }
 ?>
-<span class="pull-right">STOU.AC11</span><h3>Online</h3><h1>Test</h1>
+<span class="pull-right">STOU.AC11</span>
 
 <?php include '../include/footer2.php';?>

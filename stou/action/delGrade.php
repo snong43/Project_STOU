@@ -15,7 +15,7 @@
         <li><a href="../member/m_course.php">สนใจเรียน</a></li>
         <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
         <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
-        <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li class="active"><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
         <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -51,7 +51,7 @@ if ($conn->query($sql) === TRUE) {
        echo "<div class=\"panel-heading text-center\">ลบข้อมูลลงทะเบียน</div>";
          echo "<div class=\"panel-body text-center\">";
           echo "ลบข้อมูลไม่สำเร็จ<br> เกิดข้อผิดพลาด <br>". $conn->error."<br><br>";
-          echo "<a href=\"../member/m_gradea.php\"><button type=\"button\" class=\"btn btn-primary\">กลับหน้า ข้อมูลการลงทะเบียน</button></a>";
+          echo "<a href=\"../member/m_grade.php\"><button type=\"button\" class=\"btn btn-primary\">กลับหน้า ข้อมูลการลงทะเบียน</button></a>";
           echo "</div>";
         echo "<div class=\"panel-footer\"></div>";
      echo "</div>";
@@ -62,6 +62,5 @@ echo "</div>";
   $conn->close();
 }
 ?>
-<span class="pull-right">STOU.AC07</span><h3>Online</h3><h1>Test</h1>
-
+<span class="pull-right">STOU.AC07</span>
 <?php include '../include/footer2.php';?>
