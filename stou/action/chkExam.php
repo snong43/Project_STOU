@@ -14,7 +14,7 @@
       <li><a href="https://www.stou.ac.th/offices/ore/rere/goto/calendar">ปฏิทิน</a></li>
         <li><a href="../member/m_course.php">สนใจเรียน</a></li>
         <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
-        <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
+        <li class="active"><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
         <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
         <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
