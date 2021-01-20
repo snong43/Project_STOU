@@ -3,7 +3,6 @@
 
     function validate(){
       var m_edu = $('input[name="m_edu"]:checked').val(); ;
-      var age25 = $('input[name="age25"]:checked').val(); ;
       var en = $('input[name="en"]:checked').val(); ;
       var math = $('input[name="math"]:checked').val(); ;
       var sci = $('input[name="sci"]:checked').val(); ;
@@ -12,7 +11,6 @@
       var train = $('input[name="train"]:checked').val(); ;
 
       console.log("m_edu = " + m_edu);
-      console.log("age25 = " + age25);
       console.log("en = " + en);
       console.log("math = " + math);
       console.log("sci = " + sci);
@@ -21,7 +19,7 @@
       console.log("train = " + train);
 
 
-      if(m_edu == undefined || age25 == undefined ||en == undefined ||math == undefined ||sci == undefined ||online == undefined ||write_exam == undefined ||train == undefined  ){
+      if(m_edu == undefined ||en == undefined ||math == undefined ||sci == undefined ||online == undefined ||write_exam == undefined ||train == undefined  ){
          
          if(m_edu == undefined ){
           document.getElementById("sp_m_edu").style.display = "block";
@@ -29,12 +27,7 @@
           document.getElementById("sp_m_edu").style.display = "none";
          }
          
-         if(age25 == undefined ){
-          document.getElementById("sp_age25").style.display = "block";
-         }else{
-          document.getElementById("sp_age25").style.display = "none";
-
-         }
+         
          if(en == undefined ){
           document.getElementById("sp_en").style.display = "block";
           }else{
@@ -73,7 +66,6 @@
          }else{
         document.getElementById("sp_math").style.display = "none";
         document.getElementById("sp_m_edu").style.display = "none";
-        document.getElementById("sp_age25").style.display = "none";
         document.getElementById("sp_en").style.display = "none";
         document.getElementById("sp_sci").style.display = "none";
         document.getElementById("sp_online").style.display = "none";
@@ -127,17 +119,6 @@
         </div>
         <div class="radio ">
           <label><input type="radio" name="m_edu" value="12" >ปริญญาตรี</label>
-        </div>
-      </div>
-    </div>
-    <div class="panel panel-warning">
-      <div class="panel-heading">2.อายุ<span id="sp_age25" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
-      <div class="panel-body">
-      <div class="radio">
-          <label><input type="radio" name="age25" value="Y"  required>น้อยกว่า 25 ปี</label>
-        </div>
-        <div class="radio">
-          <label><input type="radio" name="age25" value="N"  required>ตั้งแต่ 25 ปีขึ้นไป</label>
         </div>
       </div>
     </div>

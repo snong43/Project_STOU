@@ -1,4 +1,51 @@
 <?php include 'include/main_header.php';?>
+<script>
+  function validate(){
+    var user_login = document.getElementById("user_login").value ;
+    var user_pwd = document.getElementById("user_pwd").value ;
+    var user_id = document.getElementById("user_id").value ;
+    var user_name = document.getElementById("user_name").value ;
+    var user_email = document.getElementById("user_email").value ;
+
+    console.log("user_login = " + user_login);
+    console.log("user_pwd = " + user_pwd);
+    console.log("user_id = " + user_id);
+    console.log("user_name = " + user_name);
+    console.log("user_email = " + user_email);
+
+    if(user_login =="" || user_pwd == "" || user_id == "" || user_name == "" || user_email == "" ){
+      $("#myModal").modal()
+
+    }else{
+      document.getElementById("register").submit();
+    }
+
+  }
+
+
+</script>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">บันทึกข้อมูล</h4>
+        </div>
+        <div class="modal-body">
+          <p>กรุณากรอกข้อมูลให้ครบถ้วน</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">ปิดหน้าต่าง</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -13,7 +60,7 @@
 </nav>
 <div class="container">
 <h2>สมัครสมาชิกใหม่</h2>
-  <form class="form-horizontal" action="action/registerAction.php" method="post">
+  <form class="form-horizontal" action="action/registerAction.php" method="post" id="register">
   <div class="panel panel-info">
       <div class="panel-heading">New Member</div>
       <div class="panel-body">
@@ -52,7 +99,6 @@
       <div class="col-sm-10">          
         <div class="form-group col-sm-12">
                 <select class="input-large form-control"  name="user_study" id="user_study">
-                    <option value="">เลือกสาขาวิชา</option>
                     <option value="01">01 : สาขาวิชาศิลปศาสตร์ - ไทยคดีศึกษา</option>
                     <option value="02">02 : สาขาวิชาศิลปศาสตร์ - สารสนเทศทั่วไป</option>
                     <option value="03">03 : สาขาวิชาศิลปศาสตร์ - สารสนเทศสำนักงาน</option>
@@ -94,10 +140,37 @@
             </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_edu">วุฒิการศึกษาที่ใช้สมัคร:</label>
+      <div class="col-sm-10">          
+        <div class="form-group col-sm-12">
+                <select class="input-large form-control"  name="user_edu" id="user_edu">
+                    <option value="3">มัธยมศึกษาตอนต้น</option>
+                    <option value="6">มัธยมศึกษาตอนปลาย</option>
+                    <option value="9">ประกาศนียบัตรขั้นสูง</option>
+                    <option value="12">ปริญญาตรี</option>
+
+                </select>
+            </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_age25">อายุ:</label>
+      <div class="col-sm-10">          
+        <div class="form-group col-sm-12">
+                <select class="input-large form-control"  name="user_age25" id="user_age25">
+                    <option value="Y">น้อยกว่า หรือ เท่ากับ 25 ปี</option>
+                    <option value="N">ตั้งแต่ 25 ปีขึ้นไป</option>
+                </select>
+            </div>
+      </div>
+    </div>
+
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
   
-        <button type="submit" class="btn btn-primary">สมัครสมาชิก</button>
+        <button type="button" class="btn btn-primary" onclick="validate();">สมัครสมาชิก</button>
       </div>
     </div>
       </div>

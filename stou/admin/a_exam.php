@@ -61,7 +61,6 @@
         <th>WRITE EXAM</th>
         <th>TRAIN</th>
         <th>EDUCATION</th>
-        <th>AGE25</th>
         <th>ONLINE</th>
         <th>Operation</th>
       </tr>
@@ -103,11 +102,10 @@
                  }else{
                   echo "<td>" . "ปริญญาตรี"."</td>";
                  }    
-                 echo "<td>" . $row["age25"] ."</td>";
                  echo "<td>" . $row["online"] ."</td>";
                  echo "<td>". "<a href=\"../action/u_exam.php?course_id=".$row["course_id"]."&course_name=".$row["course_name"]."&online=".$row["online"].
                 "&en=".$row["en"]."&math=".$row["math"]."&sci=".$row["sci"] ."&write_exam=".$row["write_exam"]."&train=".$row["train"] .
-                "&m_edu=".$row["m_edu"] ."&age25=".$row["age25"]."\" ><button type=\"button\" class=\"btn btn-info\">ปรับปรุง</button></a>" ."</td>";    
+                "&m_edu=".$row["m_edu"] ."\" ><button type=\"button\" class=\"btn btn-info\">ปรับปรุง</button></a>" ."</td>";    
                 echo "</tr>";
     }
 } else {

@@ -30,6 +30,9 @@
             $user_name = $_POST["user_name"];
             $user_email = $_POST["user_email"];
             $user_study = $_POST["user_study"];
+            $user_edu = $_POST["user_edu"];
+            $user_age25 = $_POST["user_age25"];
+
             $date = date('Y-m-d H:i:s');
             $msg = "";
             $fwPage = "";
@@ -49,8 +52,8 @@
             $result = $conn->query($StrSQL);
 
             if ($result->num_rows == 0) {
-                $StrSQL = "INSERT INTO user (user, pass, stou_id, name, email, study, reg_date, role)
-                VALUES ('$user_login', '$user_pwd', '$user_id', '$user_name', '$user_email','$user_study','$date', 'C')";
+                $StrSQL = "INSERT INTO user (user, pass, stou_id, name, email, study, reg_date, role, edu, age25)
+                VALUES ('$user_login', '$user_pwd', '$user_id', '$user_name', '$user_email','$user_study','$date', 'C', '$user_edu','$user_age25')";
                 
                 if ($conn->query($StrSQL) === TRUE) {
                   $msg = "ลงทะเบียนเรียนร้อย <br> ------------------ <br> user = " .$user_login . "<br> pass = " .  $user_pwd;

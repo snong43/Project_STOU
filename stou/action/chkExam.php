@@ -27,7 +27,6 @@
 </nav>
 <?php
   $m_edu  = $_POST["m_edu"];
-  $age25  = $_POST["age25"];
   $en  = $_POST["en"];
   $math  = $_POST["math"];
   $sci  = $_POST["sci"];
@@ -46,7 +45,7 @@
     die("Connection failed: " . $conn->connect_error);
   }
 
-  $sql = "SELECT *  FROM course WHERE m_edu = '$m_edu' AND math='$math' AND sci = '$sci' AND age25='$age25' AND online='$online' AND write_exam = '$write_exam' AND train = '$train' ";
+  $sql = "SELECT *  FROM course WHERE m_edu = '$m_edu' AND math='$math' AND sci = '$sci' AND online='$online' AND write_exam = '$write_exam' AND train = '$train' ";
 
   echo "SQL = " .$sql;
   $result = $conn->query($sql);

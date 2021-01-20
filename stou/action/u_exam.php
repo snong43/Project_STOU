@@ -31,7 +31,6 @@
     $write = $_GET["write_exam"];
     $train = $_GET["train"];
     $m_edu = $_GET["m_edu"];
-    $age25 = $_GET["age25"];
 ?>
 <div class="container">
 <h2>กำหนดแบบทดสอบ</h2>
@@ -44,20 +43,6 @@
       <label class="control-label col-sm-2" >สาขาวิชา:</label>
       <div class="col-sm-4">
         <label class="control-label" ><?php echo $course_name ?></label>
-      </div>
-      <label class="control-label col-sm-2" >อายุเกิน 25 ปี:</label>
-      <div class="col-sm-4">
-        <?php
-        echo "<select class=\"form-control\" id=\"age25\" name=\"age25\" >";
-        if($age25 == "Y"){
-            echo "  <option value=\"Y\" selected>Y</option>";
-            echo "  <option value=\"N\">N</option>";
-        }else{
-            echo "  <option value=\"Y\">Y</option>";
-            echo "  <option value=\"N\" selected>N</option>";
-        }
-echo "</select>";
-        ?>
       </div>
     </div>
 <?php

@@ -36,7 +36,6 @@ CREATE TABLE `course` (
   `write_exam` varchar(1) NOT NULL,
   `train` varchar(1) NOT NULL,
   `m_edu` int(11) NOT NULL,
-  `age25` varchar(1) NOT NULL,
   `online` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 

@@ -31,7 +31,6 @@
   $write_exam = $_POST["write_exam"];
   $train = $_POST["train"];
   $m_edu = $_POST["m_edu"];
-  $age25 = $_POST["age25"];
   $online = $_POST["online"];
 
   $servername = "localhost";
@@ -52,8 +51,7 @@ $StrSQL = "UPDATE course  SET  en =  '$en' , "  .
             " write_exam =  '$write_exam' , " .
             " train =  '$train' , " .
             " m_edu =  '$m_edu' , " .
-            " online =  '$online' , " .
-            " age25 =  '$age25'  " .
+            " online =  '$online'  " .
             " WHERE course_id = '$course_id'";
 
             if ($conn->query($StrSQL) === TRUE) {

@@ -45,6 +45,8 @@ $stou_id = "";
 $name = "";
 $email = "";
 $study = "";
+$edu = "";
+$age25 = "";
 
 if ($result->num_rows > 0) {
     // output data of each row
@@ -54,6 +56,8 @@ if ($result->num_rows > 0) {
       $name = $row["name"];
       $email = $row["email"];
       $study = $row["study"];
+      $edu = $row["edu"];
+      $age25 = $row["age25"];
 
     }
   } 
@@ -311,6 +315,76 @@ if ($result->num_rows > 0) {
             </div>
       </div>
     </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_edu">วุฒิการศึกษาที่ใช้สมัคร:</label>
+      <div class="col-sm-10">          
+        <div class="form-group col-sm-12">
+                <select class="input-large form-control"  name="user_edu" id="user_edu">
+                        <?php
+
+                        if($edu ==  '3'){
+                            echo "<option value=\"3\" selected>มัธยมศึกษาตอนต้น</option>";
+
+                        }else{
+                            echo "<option value=\"3\">มัธยมศึกษาตอนต้น</option>";
+
+                        }
+
+                        if($edu ==  '6'){
+                            echo "<option value=\"6\" selected>มัธยมศึกษาตอนปลาย</option>";
+
+                        }else{
+                            echo "<option value=\"6\">มัธยมศึกษาตอนปลาย</option>";
+
+                        }
+                        if($edu ==  '9'){
+                            echo "<option value=\"9\" selected>ประกาศนียบัตรขั้นสูง</option>";
+
+                        }else{
+                            echo "<option value=\"9\">ประกาศนียบัตรขั้นสูง</option>";
+
+                        }
+                        if($edu ==  '12'){
+                            echo "<option value=\"12\" selected>ปริญญาตรี</option>";
+
+                        }else{
+                            echo "<option value=\"12\">ปริญญาตรี</option>";
+
+                        }
+                        ?>
+                </select>
+            </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="user_age25">อายุ:</label>
+      <div class="col-sm-10">          
+        <div class="form-group col-sm-12">
+                <select class="input-large form-control"  name="user_age25" id="user_age25">
+                  
+                  <?php
+                        if($edu ==  '12'){
+                            echo "<option value=\"Y\" selected>น้อยกว่า หรือ เท่ากับ 25 ปี</option>";
+
+                        }else{
+                            echo "<option value=\"N\">น้อยกว่า หรือ เท่ากับ 25 ปี</option>";
+
+                        }
+
+                        if($edu ==  '12'){
+                            echo "<option value=\"Y\" selected>ตั้งแต่ 25 ปีขึ้นไป<</option>";
+
+                        }else{
+                            echo "<option value=\"N\">ตั้งแต่ 25 ปีขึ้นไป</option>";
+
+                        }
+
+                    ?>
+
+                </select>
+            </div>
+      </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <a href="../m_index.php"><button type="button" class="btn btn-primary">กลับสู่เมนูหลัก</button></a>

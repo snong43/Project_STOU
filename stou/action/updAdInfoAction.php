@@ -29,6 +29,8 @@
   $user_name = $_POST["user_name"];
   $user_email = $_POST["user_email"];
   $user_study = $_POST["user_study"];
+  $user_edu =  $_POST["user_edu"];
+  $user_age25 =  $_POST["user_age25"];
   $date = date('Y-m-d H:i:s');
   $msg = "";
   $fwPage = "";
@@ -49,6 +51,8 @@
             " stou_id =  '$user_id' , " .
             " name =  '$user_name' , " .
             " email =  '$user_email' , " .
+            " age25 =  '$user_age25' , " .
+            " edu =  '$user_edu' , " .
             " study =  '$user_study ' " .
             " WHERE user = '$user_login'";
             if ($conn->query($StrSQL) === TRUE) {
