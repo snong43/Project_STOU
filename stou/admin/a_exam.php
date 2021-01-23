@@ -55,12 +55,10 @@
       <tr>
         <th>course_id</th>
         <th>course_name</th>
-        <th>EN</th>
         <th>MATH</th>
         <th>SCI</th>
-        <th>WRITE EXAM</th>
+        <th>WRITE</th>
         <th>TRAIN</th>
-        <th>EDUCATION</th>
         <th>ONLINE</th>
         <th>Operation</th>
       </tr>
@@ -88,24 +86,14 @@
                 echo "<tr>";
                 echo "<td>" . $row["course_id"] ."</td>";
                 echo "<td>" . $row["course_name"] ."</td>";
-                echo "<td>" . $row["en"] ."</td>";
                 echo "<td>" . $row["math"] ."</td>";
                 echo "<td>" . $row["sci"] ."</td>";
                 echo "<td>" . $row["write_exam"] ."</td>";
-                echo "<td>" . $row["train"] ."</td>";
-                if("3" == $row["m_edu"]){
-                  echo "<td>" . "ม.ต้น"."</td>";
-                 }else if("6" == $row["m_edu"]){
-                  echo "<td>" . "ม.ปลาย"."</td>";
-                 }else  if("9" == $row["m_edu"]){
-                  echo "<td>" . "ปวส."."</td>";
-                 }else{
-                  echo "<td>" . "ปริญญาตรี"."</td>";
-                 }    
+                echo "<td>" . $row["train"] ."</td>"; 
                  echo "<td>" . $row["online"] ."</td>";
                  echo "<td>". "<a href=\"../action/u_exam.php?course_id=".$row["course_id"]."&course_name=".$row["course_name"]."&online=".$row["online"].
-                "&en=".$row["en"]."&math=".$row["math"]."&sci=".$row["sci"] ."&write_exam=".$row["write_exam"]."&train=".$row["train"] .
-                "&m_edu=".$row["m_edu"] ."\" ><button type=\"button\" class=\"btn btn-info\">ปรับปรุง</button></a>" ."</td>";    
+                "&math=".$row["math"]."&sci=".$row["sci"] ."&write_exam=".$row["write_exam"]."&train=".$row["train"] .
+                "\" ><button type=\"button\" class=\"btn btn-info\">ปรับปรุง</button></a>" ."</td>";    
                 echo "</tr>";
     }
 } else {
@@ -113,10 +101,12 @@
 }
 $conn->close();
 ?>
+
 </tbody>
 </table>
     </div>
     </div>
+
   </div>
 </div>
 </form>

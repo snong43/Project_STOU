@@ -25,12 +25,10 @@
 </nav>
 <?php
   $course_id = $_POST["course_id"];
-  $en = $_POST["en"];
   $math = $_POST["math"];
   $sci = $_POST["sci"];
   $write_exam = $_POST["write_exam"];
   $train = $_POST["train"];
-  $m_edu = $_POST["m_edu"];
   $online = $_POST["online"];
 
   $servername = "localhost";
@@ -45,32 +43,17 @@
       die("Connection failed: " . $conn->connect_error);
     }
 
-$StrSQL = "UPDATE course  SET  en =  '$en' , "  .
+$StrSQL = "UPDATE course  SET   "  .
             " math =  '$math' , " .
             " sci =  '$sci' , " .
             " write_exam =  '$write_exam' , " .
             " train =  '$train' , " .
-            " m_edu =  '$m_edu' , " .
             " online =  '$online'  " .
             " WHERE course_id = '$course_id'";
 
             if ($conn->query($StrSQL) === TRUE) {
-                echo "<div class=\"container\">" ;    
-                echo "<div class=\"row\">";
-                echo "<div class=\"col-sm-4\"></div>";
-                  echo "<div class=\"col-sm-4\">"; 
-                   echo "<div class=\"panel panel-success\">";
-                     echo "<div class=\"panel-heading text-center\"> Update Success</div>";
-                       echo "<div class=\"panel-body text-center\">";
-                        echo "แก้ไขข้อมูลเรียบร้อยแล้ว<br>  <br>";
-                        echo "<a href=\"../admin/a_exam.php\"><button type=\"button\" class=\"btn btn-primary\">ไปหน้าแบบทดสอบ</button></a>";
-                        echo "</div>";
-                      echo "<div class=\"panel-footer\"></div>";
-                   echo "</div>";
-                  echo "</div>";
-              echo "<div class=\"col-sm-4\"></div>";
-              echo "</div>";
-              echo "</div>";
+              header("Location: ../admin/a_exam.php");
+              exit();
               } else {
                 echo "<div class=\"container\">" ;    
                 echo "<div class=\"row\">";

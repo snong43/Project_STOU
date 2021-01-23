@@ -1,5 +1,11 @@
 <?php include '../include/header2.php';?>
-
+<script>
+$(document).ready(function(){
+  $("#user_study").change(function(){
+    alert("The text has been changed. " + $("#user_study").val());
+  });
+});
+</script>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -35,7 +41,6 @@
       <div class="col-sm-10">          
         <div class="form-group col-sm-12">
                 <select class="input-large form-control"  name="user_study" id="user_study">
-                    <option value="">เลือกสาขาวิชา</option>
                     <option value="01">01 : สาขาวิชาศิลปศาสตร์ - ไทยคดีศึกษา</option>
                     <option value="02">02 : สาขาวิชาศิลปศาสตร์ - สารสนเทศทั่วไป</option>
                     <option value="03">03 : สาขาวิชาศิลปศาสตร์ - สารสนเทศสำนักงาน</option>
@@ -65,14 +70,13 @@
                     <option value="27">27 : สาขาวิชานิเทศศาสตร์</option>
                     <option value="28">28 : สาขาวิชาวิทยาศาสตร์สุขภาพ - สาธารณสุขชุมชน</option>
                     <option value="29">29 : สาขาวิชาวิทยาศาสตร์สุขภาพ - อาชีวอนามัยและความปลอดภัย</option>
-                    <option value="30">30 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>
-                    <option value="31">31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>
-                    <option value="32">32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>
-                    <option value="33">33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>
-                    <option value="34">34 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>
-                    <option value="35">35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>
-                    <option value="36">36 : โครงการสัมฤทธิบัตร</option>
-                    <option value="37">37 : ผู้สนใจเรียน</option>
+                    <option value="30">30 : สาขาวิชาวิทยาศาสตร์สุขภาพ - แพทย์แผนไทย</option>
+                    <option value="31">31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>
+                    <option value="32">32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>
+                    <option value="33">33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>
+                    <option value="34">34 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>
+                    <option value="35">35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>
+                    <option value="36">36 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>
                 </select>
             </div>
       </div>
@@ -82,6 +86,6 @@
   </div>
 
 
-  <span class="pull-right">STOU.ME02</span><h3>Online</h3><h1>Test</h1>
+  <span class="pull-right">STOU.ME02</span>
 
   <?php include '../include/footer2.php';?>

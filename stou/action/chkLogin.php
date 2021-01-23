@@ -42,6 +42,15 @@ if ($result->num_rows > 0) {
 
   while($row = $result->fetch_assoc()) {
     $_SESSION["role"]  =  $row["role"];
+
+    echo "Age = " . $row["age25"] . "<br>";
+    echo "study = " . $row["study"] . "<br>";
+
+    if($row["age25"] == "Y" && $row["study"] == "3" ){
+      $_SESSION["a25"]  =  "A";
+    }else{
+      $_SESSION["a25"]  =  "N";
+    }
   }
 
   if($_SESSION["role"] ==  "A"){
@@ -49,7 +58,7 @@ if ($result->num_rows > 0) {
   }else{
     header( "location: ../m_index.php" );
   }
-  exit(0);
+  exit(0); 
 } else {
     echo "<div class=\"container\">" ;    
     echo "<div class=\"row\">";
