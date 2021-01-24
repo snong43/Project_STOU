@@ -81,12 +81,24 @@
     </div>
   </div>
 </nav>
+
+
+
+
+
+
+
 <form method="post" action="../action/chkExam.php" id="examForm" >
 <div class="container">
-  <h2>ทดสอบเบื้องต้น เรียนอะไรดี ใน มสธ</h2>
+<h2>ทดสอบเบื้องต้น เรียนอะไรดี ใน มสธ</h2>
   <div class="panel-group">
+    
+    
+    
 
-    <div class="panel panel-primary">
+
+
+  <div class="panel panel-primary">
       <div class="panel-heading">1.ชอบคณิตศาสตร์<span id="sp_math" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
       <div class="radio">
@@ -141,14 +153,19 @@
         </div>
       </div> 
     </div>
-    <div>
+
+
+
+    <br>
+    <div class="container text-center">
+      <button type="button" class="btn btn-success " onclick="validate();">ตรวจสอบสาขาวิชาที่เหมาะที่จะเรียน</button>
     </div>
-<br>
-<div class="container text-center">
-  <button type="button" class="btn btn-success " onclick="validate();">ตรวจสอบสาขาวิชาที่เหมาะที่จะเรียน</button>
+    <br>
+
+
+
+  </div>
 </div>
-<br>
 </form>
 <span class="pull-right">STOU.ME03</span>
-
 <?php include '../include/footer2.php';?>
