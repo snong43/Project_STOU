@@ -95,5 +95,5 @@
               }
 $conn->close();
 ?>
-<span class="pull-right">STOU.AC21</span>
+<span class="pull-right">STOU.22</span>
 <?php include '../include/footer2.php';?>

@@ -238,6 +238,6 @@
     </div>
   </div>
 </div><br>
-<span class="pull-right">STOU.AC08</span>
+<span class="pull-right">STOU.08</span>
 
 <?php include '../include/footer2.php';?>

@@ -16,7 +16,7 @@
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li ><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li ><a href="../admin/a_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="./logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
@@ -79,14 +79,13 @@
                     <option value="27">27 : สาขาวิชานิเทศศาสตร์</option>
                     <option value="28">28 : สาขาวิชาวิทยาศาสตร์สุขภาพ - สาธารณสุขชุมชน</option>
                     <option value="29">29 : สาขาวิชาวิทยาศาสตร์สุขภาพ - อาชีวอนามัยและความปลอดภัย</option>
-                    <option value="30">30 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>
-                    <option value="31">31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>
-                    <option value="32">32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>
-                    <option value="33">33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>
-                    <option value="34">34 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>
-                    <option value="35">35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>
-                    <option value="36">36 : โครงการสัมฤทธิบัตร</option>
-                    <option value="37">37 : ผู้สนใจเรียน</option>
+                    <option value="30">30 : สาขาวิชาวิทยาศาสตร์สุขภาพ - แพทย์แผนไทย</option>
+                    <option value="31">31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>
+                    <option value="32">32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>
+                    <option value="33">33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>
+                    <option value="34">34 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>
+                    <option value="35">35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>
+                    <option value="36">36 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>
                 </select>
             </div>
       </div>
@@ -102,5 +101,5 @@
 </div>
 </div><br>
 <br><br>
-<span class="pull-right">STOU.AC16</span>
+<span class="pull-right">STOU.17</span>
 <?php include '../include/footer2.php';?>

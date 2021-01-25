@@ -7,16 +7,17 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="../m_index.php"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="../a_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-      <li class="active"><a href="../admin/a_course.php">หลักสูตร</a></li>
+        <li class="active"><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
-        <li ><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
+        <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
-        <li class="active"><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
-        <li><a href="./logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../admin/a_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
   </div>
@@ -86,5 +87,5 @@
 </div>
 </div><br>
 <br><br>
-<span class="pull-right">STOU.AC13</span>
+<span class="pull-right">STOU.14</span>
 <?php include '../include/footer2.php';?>

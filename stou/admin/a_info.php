@@ -17,7 +17,7 @@
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">     
-        <li  class="active"><a href="m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li  class="active"><a href="a_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
@@ -261,55 +261,51 @@ if ($result->num_rows > 0) {
                         }else{
                             echo "<option value=\"29\">29 : สาขาวิชาวิทยาศาสตร์สุขภาพ - อาชีวอนามัยและความปลอดภัย</option>";
                         } 
-                         if($study == "30"){
-                            echo "<option value=\"30\" selected>30 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>";
+                        if($study == "30"){
+                            echo "<option value=\"30\" selected>30 : สาขาวิชาวิทยาศาสตร์สุขภาพ - แพทย์แผนไทย</option>";
                         }else{
-                            echo "<option value=\"30\">30 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>";
+                            echo "<option value=\"30\">30 : สาขาวิชาวิทยาศาสตร์สุขภาพ - แพทย์แผนไทย</option>";
                         } 
+
                          if($study == "31"){
-                            echo "<option value=\"31\" selected>31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>";
+                            echo "<option value=\"31\" selected>31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>";
                         }else{
-                            echo "<option value=\"31\">31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>";
+                            echo "<option value=\"31\">31 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - การจัดการเทคโนโลยีสารสนเทศและการสื่อสาร</option>";
                         } 
                          if($study == "32"){
-                            echo "<option value=\"32\" selected>32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>";
-    
+                            echo "<option value=\"32\" selected>32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>";
                         }else{
-                            echo "<option value=\"32\">32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>";
-    
+                            echo "<option value=\"32\">32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - วิทยาการคอมพิวเตอร์</option>";
                         } 
                          if($study == "33"){
-                            echo "<option value=\"33\" selected>33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>";
+                            echo "<option value=\"33\" selected>32 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>";
     
                         }else{
-                            echo "<option value=\"33\">33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>";
+                            echo "<option value=\"33\">33 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการผลิตอุตสาหกรรม</option>";
     
                         } 
                          if($study == "34"){
-                            echo "<option value=\"34\" selected>34 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>";
+                            echo "<option value=\"34\" selected>34 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>";
     
                         }else{
-                            echo "<option value=\"34\">34 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>";
+                            echo "<option value=\"34\">34 : สาขาวิชาวิทยาศาสตร์และเทคโนโลยี - เทคโนโลยีการพิมพ์และบรรจุภัณฑ์</option>";
     
                         } 
                          if($study == "35"){
-                            echo "<option value=\"35\" selected>35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>";
+                            echo "<option value=\"35\" selected>35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>";
     
                         }else{
-                            echo "<option value=\"35\">35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>";
+                            echo "<option value=\"35\">35 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์</option>";
     
                         } 
                          if($study == "36"){
-                            echo "<option value=\"36\" selected>36 : โครงการสัมฤทธิบัตร</option>";
+                            echo "<option value=\"36\" selected>36 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>";
     
                         }else{
-                            echo "<option value=\"36\">36 : โครงการสัมฤทธิบัตร</option>";
+                            echo "<option value=\"36\">36 : สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</option>";
+    
                         } 
-                         if($study == "37"){
-                            echo "<option value=\"37\" selected>37 : ผู้สนใจเรียน</option>";
-                        }else{
-                            echo "<option value=\"37\">37 : ผู้สนใจเรียน</option>";
-                        }
+              
                    ?>
                 </select>
             </div>
@@ -400,5 +396,5 @@ if ($result->num_rows > 0) {
 <?php
   $conn->close();
 ?>
-<span class="pull-right">STOU.A04</span>
+<span class="pull-right">STOU.27</span>
 <?php include '../include/footer2.php';?>

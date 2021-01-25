@@ -36,4 +36,5 @@
 </div>
 </div><br>
 <br><br>
+<span class="pull-right">STOU.37</span>
 <?php include 'include/footer.php';?>

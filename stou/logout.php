@@ -40,4 +40,5 @@ session_destroy();
     </div>
   </div>
 </div><br>
+<span class="pull-right">STOU.38</span>
 <?php include 'include/footer3.php';?>

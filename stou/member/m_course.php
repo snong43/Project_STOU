@@ -80,5 +80,5 @@
     </div>
   </div>
 </div><br>
-<span class="pull-right">STOU.ME01</span>
+<span class="pull-right">STOU.29</span>
 <?php include '../include/footer2.php';?>

@@ -291,7 +291,7 @@
               </td>
               <td>
               <div class="radio">
-                  <label><input type="radio" name="user_study" value="36"> สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ/label>
+                  <label><input type="radio" name="user_study" value="36"> สาขาวิชาเศรษฐศาสตร์ - เศรษฐศาสตร์ธุรกิจ</label>
                 </div>
               </td>
             </tr>
@@ -334,7 +334,7 @@
 </form>
 
 
-<span class="pull-right">STOU.ME02</span>
+<span class="pull-right">STOU.30</span>
 
 <?php include '../include/footer2.php';?>
 

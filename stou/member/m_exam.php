@@ -92,12 +92,6 @@
 <div class="container">
 <h2>ทดสอบเบื้องต้น เรียนอะไรดี ใน มสธ</h2>
   <div class="panel-group">
-    
-    
-    
-
-
-
   <div class="panel panel-primary">
       <div class="panel-heading">1.ชอบคณิตศาสตร์<span id="sp_math" style="color: red; display:none">กรุณาเลือกคำตอบ (...)</span></div>
       <div class="panel-body">
@@ -167,5 +161,5 @@
   </div>
 </div>
 </form>
-<span class="pull-right">STOU.ME03</span>
+<span class="pull-right">STOU.31</span>
 <?php include '../include/footer2.php';?>

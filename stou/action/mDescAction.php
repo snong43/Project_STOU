@@ -108,17 +108,8 @@ $result = $conn->query($sql);
       }
 $conn->close();
 
-
-
 ?>
 
-
-
-
-
-
-
-  
   <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <a href="../member/m_day_train.php"><button type="submit" class="btn btn-primary" name="btnSave">กลับไปเลือกสาขาวิชาอื่น</button></a>
@@ -133,6 +124,6 @@ $conn->close();
 
 
 
-<span class="pull-right">AC11D</span>
+<span class="pull-right">12</span>
 
 <?php include '../include/footer2.php';?>

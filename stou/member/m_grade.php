@@ -154,6 +154,6 @@
     </div>
   </div>
 </div>
-<span class="pull-right">STOU.ME04</span>
+<span class="pull-right">STOU.33</span>
 
 <?php include '../include/footer2.php';?>

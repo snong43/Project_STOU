@@ -72,4 +72,5 @@
     </div>
 </div>
 <br>
+<span class="pull-right">STOU.39</span>
 <?php include 'include/main_footer.php';?>

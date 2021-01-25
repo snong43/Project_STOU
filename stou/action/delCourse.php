@@ -62,5 +62,5 @@ echo "</div>";
   $conn->close();
 }
 ?>
-<span class="pull-right">STOU.AC06</span>
+<span class="pull-right">STOU.06</span>
 <?php include '../include/footer2.php';?>

@@ -16,7 +16,7 @@
         <li class="active"><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
+        <li><a href="../admin/a_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
@@ -110,6 +110,6 @@ $conn->close();
   </div>
 </div>
 </form>
-<span class="pull-right">STOU.AD02</span>
+<span class="pull-right">STOU.26</span>
 
 <?php include '../include/footer2.php';?>
