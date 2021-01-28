@@ -16,7 +16,6 @@
         <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
         <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
         <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
@@ -80,5 +79,5 @@
     </div>
   </div>
 </div><br>
-<span class="pull-right">STOU.29</span>
+<span class="pull-right">STOU.33</span>
 <?php include '../include/footer2.php';?>

@@ -14,6 +14,8 @@
         <li><a href="./admin/a_course.php">หลักสูตร</a></li>
         <li><a href="./admin/a_train.php">วิชาฝึกอบรม</a></li>
         <li><a href="./admin/a_exam.php">แบบทดสอบ</a></li>
+        <li><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="./admin/a_info.php"><img src="img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -46,8 +48,13 @@
       </div>
     </div>
     <div class="col-sm-4"> 
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">กำหนดสิทธิ์</div>
+        <div class="panel-body"><a href="./admin/a_admin.php"><img src="img/them.png" class="img-responsive" style="width:100%" alt="กำหนดสิทธิ์"></a></div>
+        <div class="panel-footer"></div>
+      </div>
     </div>
   </div>
 </div>
-<span class="pull-right">STOU.35</span>
+<span class="pull-right">STOU.38</span>
 <?php include 'include/main_footer.php';?>

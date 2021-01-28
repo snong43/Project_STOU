@@ -16,7 +16,6 @@
         <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
         <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
         <li class="active"><a href="member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -238,6 +237,6 @@
     </div>
   </div>
 </div><br>
-<span class="pull-right">STOU.08</span>
+<span class="pull-right">STOU.09</span>
 
 <?php include '../include/footer2.php';?>

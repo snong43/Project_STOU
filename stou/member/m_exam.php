@@ -72,21 +72,16 @@
         <li><a href="../member/m_course.php">สนใจเรียน</a></li>
         <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
         <li class="active"><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
-        <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
+        <li> <a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
+      </ul>
       <ul class="nav navbar-nav navbar-right">
+        
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
         <li><a href="../logout.php"><img src="../img/out.png" width="32px" hegiht="32px"> Logout</a> </li>
       </ul>
     </div>
   </div>
 </nav>
-
-
-
-
-
-
 
 <form method="post" action="../action/chkExam.php" id="examForm" >
 <div class="container">
@@ -161,5 +156,5 @@
   </div>
 </div>
 </form>
-<span class="pull-right">STOU.31</span>
+<span class="pull-right">STOU.35</span>
 <?php include '../include/footer2.php';?>

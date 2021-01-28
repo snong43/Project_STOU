@@ -34,7 +34,6 @@
 
 </script>
 
-
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -52,7 +51,6 @@
         <li class="active"><a href="../member/m_day_train.php">วิชาอบรม</a></li>
         <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
         <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
-        <li><a href="../member/m_info.php">ส่วนตัว</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../member/m_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -334,7 +332,7 @@
 </form>
 
 
-<span class="pull-right">STOU.30</span>
+<span class="pull-right">STOU.34</span>
 
 <?php include '../include/footer2.php';?>
 
