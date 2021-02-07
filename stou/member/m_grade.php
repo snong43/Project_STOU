@@ -16,6 +16,8 @@
         <li><a href="../member/m_day_train.php">วิชาอบรม</a></li>
         <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
         <li class="active"><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
+        <li><a href="../e_exam/m_exam_search.php">คลังข้อสอบ</a></li>
+        <li><a href="../e_news/m_news_search.php">ข่าวประชาสัมพันธ์</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         
