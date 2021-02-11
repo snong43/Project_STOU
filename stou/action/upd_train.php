@@ -60,6 +60,7 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
+      <a href="../admin/a_train.php"><button type="button" class="btn btn-default">Back</button></a>
         <button type="submit" class="btn btn-primary"> บันทึก</button>
       </div>
     </div>

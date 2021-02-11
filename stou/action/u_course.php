@@ -79,6 +79,7 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
+        <a href="../admin/a_course.php"><button type="button" class="btn btn-default">Back</button></a>
         <button type="submit" class="btn btn-primary" name="btnSave">บันทึกชุดวิชาเรียน</button>
         <a href="../action/u_del_course.php?sub_id=<?php echo $sub_id; ?>"><button type="button" class="btn btn-danger" name="btnSave">ลบชุดวิชา</button></a>
         <a href="../action/u_train.php?sub_id=<?php echo $sub_id; ?>&sub_name=<?php echo $sub_name; ?>"><button type="button" class="btn btn-success" >ชุดวิชาฝึกอบรม</button></a>

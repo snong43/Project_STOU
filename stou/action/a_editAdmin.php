@@ -69,6 +69,7 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
+      <a href="../admin/a_admin.php"><button type="button" class="btn btn-default">Back</button></a>
       <button type="submit" class="btn btn-success" name="btnSave">กำหนดสิทธิ์</button>
       <a href="../action/u_del_user.php?user=<?php echo $user. "&action=del"; ?>"><button type="button" class="btn btn-danger" >ลบ User</button></a>
         <a href="../action/u_del_user.php?user=<?php echo $user."&action=reset"; ?>"><button type="button" class="btn btn-info" >รีเซต user</button></a>

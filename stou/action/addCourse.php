@@ -55,7 +55,7 @@
     </div>
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-primary" name="btnSave">บันทึกชุดวิชาเรียน</button>
+      <a href="../admin/a_course.php"><button type="button" class="btn btn-default">Back</button></a>&nbsp;&nbsp;<button type="submit" class="btn btn-primary" name="btnSave">บันทึกชุดวิชาเรียน</button>
       </div>
     </div>
       </div>
