@@ -14,7 +14,7 @@
         <li ><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
-        <li ><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li>
+        <li ><a href="../admin/a_admin.php">กำหนดสิทธิ์</a></li>
         <li class="active"><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
         <li><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
       </ul>
@@ -59,11 +59,11 @@ if ($conn->connect_error) {
       <table class="table table-striped table-hover ">
     <thead>
       <tr>
+       <th>ข้อที่</th>
         <th>ชุดวิชา</th>
         <th>ex_id</th>
         <th>โจทย์คำถาม</th>
-        <th>ข้อที่</th>
-        <th>Acive</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -80,42 +80,50 @@ if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        $sql = "SELECT * FROM exam where sub_id = '$sub_id'";
-        $sql = "SELECT e.sub_id, e.ex_id, eu.active_no, e.ex_quest, e.ex_ans FROM exam e join exam_user eu on e.ex_id = eu.ex_id where e.sub_id = '$sub_id'";
+        $sql = "SELECT e.sub_id, e.ex_id, eu.active_no, e.ex_quest, eu.active_no FROM exam e join exam_user eu on e.ex_id = eu.ex_id where e.sub_id = '$sub_id' order by eu.active_no";
         $result = $conn->query($sql);
 
+        $quest = array("", "", "","","","","","","","");
+        $quest_blank = "";
         if ($result->num_rows > 0) {
-            // output data of each row
             while($row = $result->fetch_assoc()) {
-                echo "<tr>";
-                echo "<td>" . $row["sub_id"] ."</td>";
-                echo "<td>" . $row["ex_id"] ."</td>";
-                echo "<td>" . $row["ex_quest"] ."</td>";
-                echo "<td>" . $row["ex_ans"] ."</td>";
- 
-                 echo "<td>". "<a href=\"./a_exam_insert_d.php?sub_id=". $row["sub_id"] . "&ex_id=".$row["ex_id"] . 
-                 "&ex_quest=" . $row["ex_quest"] . "&ex_ans=" . $row["ex_ans"].
-                "\" ><button type=\"button\" class=\"btn btn-success\">ปรับปรุง</button></a>" ."</td>";    
+              $quest[$row["active_no"]-1] = 
+                 "<tr>" .
+                 "<td>" . $row["active_no"] ."</td>" .
+                 "<td>" . $row["sub_id"] ."</td>" .
+                 "<td>" . $row["ex_id"] ."</td>" .
+                 "<td>" . $row["ex_quest"] ."</td>" .
+                 "<td>". "<a href=\"./choose_exam_ed.php?sub_id=". $sub_id . "&active_no=". $row["active_no"] . "&sub_name=". $sub_name."&ex_id=".$row["ex_id"] . "&ex_quest=".$row["ex_quest"].
+                "\" ><button type=\"button\" class=\"btn btn-warning\">ปรับปรุง</button></a>" ."</td>";  
+                 "</tr>";
+              }
+              for ($x = 1; $x <= 10; $x++) {
+                if( "" != $quest[$x-1] ){
+                  echo $quest[$x-1];
+                }else{
+                  echo "<tr>";
+                  echo "<td>" . $x ."</td>";
+                  echo "<td>" . $sub_id ."</td>";
+                  echo "<td>" . "" ."</td>";
+                  echo "<td>" . "" ."</td>";
+                  echo "<td>". "<a href=\"./a_exam_insert.php?sub_id=". $sub_id . "&active_no=". $x . "&sub_name=". $sub_name .
+                "\" ><button type=\"button\" class=\"btn btn-success\">เพิ่มข้อสอบใหม่</button></a>" ."</td>";  
                 echo "</tr>";
-    }
-} else {
-
-  for ($x = 1; $x <= 10; $x++) {
-    echo "<tr>";
-    echo "<td>" . $x ."</td>";
-    echo "<td>" . "" ."</td>";
-    echo "<td>" . "" ."</td>";
-    echo "<td>" . "" ."</td>";
-    echo "<td>". "<a href=\"./a_exam_insert.php?sub_id=". $row["sub_id"] . "&ex_id=".$row["ex_id"] . 
-    "&ex_quest=" . $row["ex_quest"] . "&ex_ans=" . $row["ex_ans"]. "&active_no=". $x .
-   "\" ><button type=\"button\" class=\"btn btn-success\">เพิ่มข้อสอบใหม่</button></a>" ."</td>";  
-  echo "</tr>";
-  }
-
- 
-
-
-}
+                }
+              }
+        } else {
+          for ($x = 1; $x <= 10; $x++) {
+            echo "<tr>";
+            echo "<td>" . $x ."</td>";
+            echo "<td>" . "" ."</td>";
+            echo "<td>" . "" ."</td>";
+            echo "<td>" . "" ."</td>";
+            echo "<td>". "<a href=\"./a_exam_insert.php?sub_id=". $sub_id . "&active_no=". $x . "&sub_name=". $sub_name .
+          "\" ><button type=\"button\" class=\"btn btn-success\">เพิ่มข้อสอบใหม่</button></a>" ."</td>";  
+          echo "</tr>";
+        }
+      }
+     
 $conn->close();
 ?>
 </tbody>
@@ -128,18 +136,6 @@ $conn->close();
   </div>
 </div>
 </form>
-
-
-
-
-
-
-
-
-
-
-<a href="../e_exam/a_exam_search.php"><button type="button" class="btn btn-default">Back</button></a>
-
 
 
 <?php include '../include/footer2.php';?>

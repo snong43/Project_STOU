@@ -29,6 +29,7 @@
 
 
 $sub_id = $_POST["sub_id"];
+$sub_name = $_POST["sub_name"];
 $ex_id = $_POST["ex_id"];
 $ex0 = $_POST["ex0"];
 $ex1 = $_POST["ex1"];
@@ -59,7 +60,7 @@ if ($conn->query($StrSQL) === TRUE) {
 
         if ($conn->query($StrSQL) === TRUE) {
             $conn->close();
-            header( "location: ./a_exam_search.php" );
+            header( "location: ./a_ex_insert.php?sub_id=$sub_id&sub_name=$sub_name" );
             exit(0);
         }else{
             echo $conn->error;

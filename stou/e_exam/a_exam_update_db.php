@@ -28,14 +28,12 @@
 <?php
 
 
-$sub_id = $_POST["sub_id"];
-$ex_id = $_POST["ex_id"];
-$ex0 = $_POST["ex0"];
-$ex1 = $_POST["ex1"];
-$ex2 = $_POST["ex2"];
-$ex3 = $_POST["ex3"];
-$ex4 = $_POST["ex4"];
-$ans = $_POST["ans"];
+$sub_id = $_GET["sub_id"];
+$ex_id = $_GET["ex_id"];
+$active_no = $_GET["active_no"];
+$sub_id_current = $_GET["sub_id_current"];
+$ex_id_current = $_GET["ex_id_current"];
+
 
 $servername = "localhost";
 $username = "root";
@@ -49,36 +47,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$StrSQL =  "UPDATE exam SET ex_ans = '$ans', ex_quest = '$ex0' WHERE  sub_id= '$sub_id' and ex_id = '$ex_id'";
+$StrSQL = "DELETE FROM exam_user WHERE sub_id='$sub_id_current ' AND ex_id='$ex_id_current'";
 
-
-  if ($conn->query($StrSQL) === TRUE) {
-    $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex1' WHERE  ex_choice= '1' and ex_id = '$ex_id'";
+if ($conn->query($StrSQL) === TRUE) {
+    $StrSQL = "INSERT INTO exam_user (sub_id, ex_id, active_no) VALUES ('$sub_id', '$ex_id', '$active_no' )";
     if ($conn->query($StrSQL) === TRUE) {
-      $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex2' WHERE  ex_choice= '2' and ex_id = '$ex_id'";
-      if ($conn->query($StrSQL) === TRUE) {
-        $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex3' WHERE  ex_choice= '3' and ex_id = '$ex_id'";
-        if ($conn->query($StrSQL) === TRUE) {
-          $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex4' WHERE  ex_choice= '4' and ex_id = '$ex_id'";
-          if ($conn->query($StrSQL) === TRUE) {
-            $conn->close();
-            header("Location: a_exam_search.php");
-            exit();
-          }else{
-            echo "update 4= ". $StrSQL . "<br>";
-          }
-        }else{
-          echo "Error updating record: " . $conn->error;
-        }
-      }else{
-        echo "Error updating record: " . $conn->error;
-      }
+      $conn->close();
+      header( "location: ./a_exam_search.php" );
+      exit(0);
     }else{
-      echo "Error updating record: " . $conn->error;
+      echo $conn->error;
     }
-  }else{
-    echo "Error updating record: " . $conn->error;
-  }
+
+}else{
+  echo $conn->error;
+
+}
 
   $conn->close();
 

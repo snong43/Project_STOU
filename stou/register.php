@@ -1,4 +1,4 @@
-<?php include 'include/main_header.php';?>
+<?php include 'include/header.php';?>
 <script>
   function validate(){
     var user_login = document.getElementById("user_login").value ;

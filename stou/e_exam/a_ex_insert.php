@@ -14,7 +14,7 @@
         <li ><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
-        <li ><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li>
+        <li ><a href="../admin/a_admin.php">กำหนดสิทธิ์</a></li>
         <li class="active"><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
         <li><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
       </ul>
@@ -62,6 +62,7 @@ if ($conn->connect_error) {
 <div class="container">
 <form class="form-horizontal" action="./a_ex_insert_db.php" method="post">
     <input type="hidden" id="sub_id" name="sub_id" value="<?php echo $sub_id; ?>" />
+    <input type="hidden" id="sub_name" name="sub_name" value="<?php echo $sub_name; ?>" />
     <input type="hidden" id="ex_id" name="ex_id" value="<?php echo $default_seq; ?>" />
   <h2>ข้อสอบ <?php echo $sub_id . " " . $sub_name;  ?></h2>
   <div class="panel-group">

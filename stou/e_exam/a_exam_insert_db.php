@@ -14,7 +14,7 @@
         <li ><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
-        <li ><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li>
+        <li ><a href="../admin/a_admin.php">กำหนดสิทธิ์</a></li>
         <li class="active"><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
         <li><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
       </ul>
@@ -26,25 +26,59 @@
   </div>
 </nav>
 
-
 <?php
 
+$sub_id = $_GET["sub_id"];
+$ex_id = $_GET["ex_id"];
+$active_no = $_GET["active_no"];
+
+echo "sub_id = " . $sub_id . "<br>";
+echo "ex_id = " . $ex_id . "<br>";
+echo "active_no = " . $active_no . "<br>";
 
 
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "stou";
 
+$conn = new mysqli($servername, $username, $password, $dbname);
+mysqli_set_charset($conn,"utf8");
 
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
 
+  $StrSQL = "INSERT INTO exam_user (sub_id, ex_id, active_no)
+  VALUES ('$sub_id', '$ex_id', '$active_no')";
+  
+  if ($conn->query($StrSQL) === TRUE) {
+          $StrSQL = "UPDATE subject set exam_exam = 'Y'  where sub_id = '$sub_id'";
 
-
-
-
-
-
-
+          if ($conn->query($StrSQL) === TRUE) {
+            $conn->close();
+            header( "location: ../e_exam/a_exam_search.php" );
+            exit(0);
+          }else{
+            $conn->close();
+            echo "ERROR ". $conn->error;
+          }
+  } else {
+    $conn->close();
+    echo "ERROR ". $conn->error;
+  }
 
 ?>
 
 
 
-<span class="pull-right">STOU.30</span>
+
+
+
+
+
+
+
+
+
 <?php include '../include/footer2.php';?>

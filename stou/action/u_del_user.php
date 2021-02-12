@@ -14,7 +14,7 @@
         <li class="active"><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
-        <li class="active"><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li> 
+        <li class="active"><a href="../admin/a_admin.php">กำหนดสิทธิ์</a></li> 
         <li><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
         <li><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>     
       </ul>

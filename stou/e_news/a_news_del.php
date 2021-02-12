@@ -14,9 +14,9 @@
         <li ><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
         <li><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
-        <li ><a href="../admin/a_admin.php">กำหนดสิทธิ์</a></li>
-        <li class="active"><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
-        <li><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
+        <li ><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li>
+        <li ><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
+        <li class="active"><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../admin/a_info.php"><img src="../img/person.png" width="32px" hegiht="32px">เกี่ยวกับ <?php echo $_SESSION["user"] ; ?></a> </li>
@@ -28,14 +28,7 @@
 <?php
 
 
-$sub_id = $_POST["sub_id"];
-$ex_id = $_POST["ex_id"];
-$ex0 = $_POST["ex0"];
-$ex1 = $_POST["ex1"];
-$ex2 = $_POST["ex2"];
-$ex3 = $_POST["ex3"];
-$ex4 = $_POST["ex4"];
-$ans = $_POST["ans"];
+$news_id = $_GET["news_id"];
 
 $servername = "localhost";
 $username = "root";
@@ -49,38 +42,22 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$StrSQL =  "UPDATE exam SET ex_ans = '$ans', ex_quest = '$ex0' WHERE  sub_id= '$sub_id' and ex_id = '$ex_id'";
+$StrSQL = "DELETE FROM news where news_id = '$news_id'";
 
 
-  if ($conn->query($StrSQL) === TRUE) {
-    $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex1' WHERE  ex_choice= '1' and ex_id = '$ex_id'";
-    if ($conn->query($StrSQL) === TRUE) {
-      $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex2' WHERE  ex_choice= '2' and ex_id = '$ex_id'";
-      if ($conn->query($StrSQL) === TRUE) {
-        $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex3' WHERE  ex_choice= '3' and ex_id = '$ex_id'";
+
         if ($conn->query($StrSQL) === TRUE) {
-          $StrSQL =  "UPDATE exam_choice SET ex_desc = '$ex4' WHERE  ex_choice= '4' and ex_id = '$ex_id'";
-          if ($conn->query($StrSQL) === TRUE) {
             $conn->close();
-            header("Location: a_exam_search.php");
-            exit();
-          }else{
-            echo "update 4= ". $StrSQL . "<br>";
-          }
+            header( "location: ./a_news_search.php" );
+            exit(0);
         }else{
-          echo "Error updating record: " . $conn->error;
+            echo $conn->error;
         }
-      }else{
-        echo "Error updating record: " . $conn->error;
-      }
-    }else{
-      echo "Error updating record: " . $conn->error;
-    }
-  }else{
-    echo "Error updating record: " . $conn->error;
-  }
 
-  $conn->close();
+
+
+
+
 
 ?>
 

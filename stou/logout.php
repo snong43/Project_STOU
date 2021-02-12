@@ -1,4 +1,4 @@
-<?php include 'include/header3.php';?>
+<?php include 'include/header.php';?>
 
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -41,4 +41,4 @@ session_destroy();
   </div>
 </div><br>
 <span class="pull-right">STOU.41</span>
-<?php include 'include/footer3.php';?>
+<?php include 'include/footer.php';?>
