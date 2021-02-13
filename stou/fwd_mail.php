@@ -97,5 +97,10 @@
 </div>
 </div><br>
 <br><br>
-<span class="pull-right">STOU.39</span>
+
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.59 <?php echo $space ?></span>
 <?php include 'include/footer.php';?>

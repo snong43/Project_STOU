@@ -1,4 +1,18 @@
 <?php include 'include/header.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("A" != $user_login ){
+  header( "location: ../m_index.php" );
+  exit(0);
+}
+
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -48,7 +62,7 @@
     <div class="col-sm-2"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">ข่าวประชาสัมพันธ์</div>
-        <div class="panel-body"><a href="./news/a_news_search.php"><img src="img/news.png" class="img-responsive" style="width:100%" alt="ข่าวประชาสัมพันธ์"></a></div>
+        <div class="panel-body"><a href="./e_news/a_news_search.php"><img src="img/news.png" class="img-responsive" style="width:100%" alt="ข่าวประชาสัมพันธ์"></a></div>
       </div>
     </div>
     <div class="col-sm-2">
@@ -69,5 +83,10 @@
     </div>
   </div>
 </div>
-<span class="pull-right">STOU.38</span>
+
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.58 <?php echo $space ?></span>
 <?php include 'include/footer.php';?>

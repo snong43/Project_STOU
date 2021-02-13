@@ -1,4 +1,18 @@
 <?php include '../include/header2.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("C" != $user_login ){
+  header( "location: ../a_index.php" );
+  exit(0);
+}
+
+?>
 <style>
 .table-hover tbody tr:hover td {
     background: aqua;
@@ -61,20 +75,11 @@
 </nav>
 
 <form class="form-horizontal" action="../action/mDescAction.php" method="post" id="m_day">
-
-
-
 <div class="container">
-  
   <div class="panel-group">
-
   <div class="panel panel-primary">
-
   <div class="panel-heading">ข้อมูลการวิชาอบรม</div>
-
   <div class="panel-body">
-
-
   <table class="table table-striped table-hover ">
     <tbody>
           <tr>
@@ -324,15 +329,13 @@
       
     </div>
   </div>
-
-
-
 </div>
-
 </form>
-
-
-<span class="pull-right">STOU.34</span>
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.54 <?php echo $space ?></span>
 
 <?php include '../include/footer2.php';?>
 

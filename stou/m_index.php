@@ -1,4 +1,18 @@
 <?php include 'include/header.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("C" != $user_login ){
+  header( "location: ../a_index.php" );
+  exit(0);
+}
+
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -25,10 +39,7 @@
   </div>
 </nav>
 <style>
-footer {
-    background-color: #FFFFFF;
-    padding: 5px;
-}
+
 
 </style>
 <div class="container">
@@ -78,7 +89,7 @@ footer {
                 echo "  <div class=\"panel-body\">";
                 echo "<blockquote>";
                 echo "<p>" . $row["news_content"] . "</p>";
-                echo "<footer> วันที่ประกาศ : " . $row["news_date"] . "</footer>";
+                echo "<footer style=\"background-color: #FFFFFF\"> วันที่ประกาศ : " . $row["news_date"] . "</footer>";
                 echo "</blockquote>";
                 echo "</div>";
                 echo "</div>";
@@ -98,7 +109,7 @@ footer {
                 echo "  <div class=\"panel-body\">";
                 echo "<blockquote>";
                 echo "<p>" . $row["news_content"] . "</p>";
-                echo "<footer> วันที่ประกาศ : " . $row["news_date"] . "</footer>";
+                echo "<footer style=\"background-color: #FFFFFF\"> วันที่ประกาศ : " . $row["news_date"] . "</footer>";
                 echo "</blockquote>";
                 echo "</div>";
                 echo "</div>";
@@ -122,7 +133,7 @@ footer {
         <div class="col-sm-2"> 
       <div class="panel panel-primary">
         <div class="panel-heading text-center">สนใจเรียน</div>
-        <div class="panel-body"><img src="img/study.png" class="img-responsive"  class="img-responsive" style="width:100%" title="สนใจเรียน"></div>
+        <div class="panel-body"><a href="member/m_course.php"><img src="img/study.png" class="img-responsive"  class="img-responsive" style="width:100%" title="สนใจเรียน"></a></div>
       </div>
     </div>
   <div class="col-sm-2"> 
@@ -142,7 +153,7 @@ footer {
         <div class="panel-heading text-center">คลังข้อสอบ</div>
         <div class="panel-body">
           <a href="e_exam/m_exam_search.php">
-            <div class="panel-body"><a href="member/m_course.php"><img src="img/course.png" class="img-responsive" style="width:100%" title="คลังข้อสอบ"></a></div>
+            <div class="panel-body"><a href="e_exam/m_exam_search.php"><img src="img/course.png" class="img-responsive" style="width:100%" title="คลังข้อสอบ"></a></div>
          </a>
         </div>
       </div>
@@ -163,9 +174,11 @@ footer {
 </div>
 </div>
 <br>
+</div>
+
 <?php
   $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
   $space = $space . $space . $space  . $space  . $space ;
 ?>
-<span class="pull-right">STOU.42 <?php echo $space ?></span>
+<span class="pull-right">STOU.62 <?php echo $space ?></span>
 <?php include 'include/footer.php';?>

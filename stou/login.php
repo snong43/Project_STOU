@@ -36,5 +36,10 @@
 </div>
 </div><br>
 <br><br>
-<span class="pull-right">STOU.40</span>
+
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.60 <?php echo $space ?></span>
 <?php include 'include/footer.php';?>

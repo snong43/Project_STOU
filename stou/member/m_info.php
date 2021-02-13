@@ -1,5 +1,18 @@
 <?php include '../include/header2.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
 
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("C" != $user_login ){
+  header( "location: ../a_index.php" );
+  exit(0);
+}
+
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -384,10 +397,6 @@ if ($result->num_rows > 0) {
             </div>
       </div>
 
-
-
-
-
     <div class="form-group">        
       <div class="col-sm-offset-2 col-sm-10">
         <a href="../m_index.php"><button type="button" class="btn btn-primary">กลับสู่เมนูหลัก</button></a>
@@ -403,5 +412,10 @@ if ($result->num_rows > 0) {
 <?php
   $conn->close();
 ?>
-<span class="pull-right">STOU.37</span>
+
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.57 <?php echo $space ?></span>
 <?php include '../include/footer2.php';?>

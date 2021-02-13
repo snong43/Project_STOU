@@ -1,4 +1,18 @@
 <?php include '../include/header2.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("C" != $user_login ){
+  header( "location: ../a_index.php" );
+  exit(0);
+}
+
+?>
 <script>
 
     function validate(){
@@ -142,19 +156,18 @@
         </div>
       </div> 
     </div>
-
-
-
     <br>
     <div class="container text-center">
       <button type="button" class="btn btn-success " onclick="validate();">ตรวจสอบสาขาวิชาที่เหมาะที่จะเรียน</button>
     </div>
     <br>
-
-
-
   </div>
 </div>
 </form>
-<span class="pull-right">STOU.35</span>
+
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.55 <?php echo $space ?></span>
 <?php include '../include/footer2.php';?>

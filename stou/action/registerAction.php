@@ -91,6 +91,9 @@
     </div>
   </div>
 </div>
-<span class="pull-right">STOU.14</span>
-
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.14 <?php echo $space ?></span>
 <?php  include '../include/footer2.php';?>

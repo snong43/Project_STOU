@@ -1,4 +1,18 @@
 <?php include '../include/header2.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("C" != $user_login ){
+  header( "location: ../a_index.php" );
+  exit(0);
+}
+
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -29,10 +43,6 @@
     background: aqua;
 }
 </style>
-
-
-
-
 
 <?php
   $servername = "localhost";
@@ -117,8 +127,9 @@
   </div>
 </div>
 </form>
-<span class="pull-right">STOU.29</span>
-
-
-<span class="pull-right">STOU.01</span>
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.46 <?php echo $space ?></span>
 <?php include '../include/footer2.php';?>

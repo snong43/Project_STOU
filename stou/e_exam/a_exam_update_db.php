@@ -1,4 +1,17 @@
-<?php include '../include/header2.php';?>
+<?php include '../include/header2.php';?><?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("A" != $user_login ){
+  header( "location: ../m_index.php" );
+  exit(0);
+}
+
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -67,7 +80,10 @@ if ($conn->query($StrSQL) === TRUE) {
   $conn->close();
 
 ?>
-
-<span class="pull-right">STOU.29</span>
+<?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.40 <?php echo $space ?></span>
 
 <?php include '../include/footer2.php';?>

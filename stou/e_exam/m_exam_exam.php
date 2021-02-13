@@ -1,4 +1,18 @@
 <?php include '../include/header2.php';?>
+<?php
+$user_login = $_SESSION["role"] ;
+
+if(!isset($user_login)){
+  header( "location: ../login.php" );
+  exit(0);
+}
+
+if("C" != $user_login ){
+  header( "location: ../a_index.php" );
+  exit(0);
+}
+
+?>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -191,11 +205,6 @@
         document.getElementById("score").innerHTML = "<h3>  คะแนนที่ได้รับทั้งหมด " + cNumber + " คะแนน</h3>" ;
     }
 
-    function reset(){
-        document.getElementById("sendExam").disabled = false;
-        document.getElementById("score").innerHTML = "";
-        clearRequired();
-    }
 </script>
 
 <?php
@@ -263,11 +272,13 @@
     <br>
     <a href="../e_exam/m_exam_search.php"><button type="button" class="btn btn-default">Back</button></a>
     <button type="button" class="btn btn-primary" onclick="validate()" id="sendExam" >ส่งข้อสอบ</button>
-    <button type="button" class="btn btn-primary" onclick="reset()" >ลองใหม่</button>
     <span id="score" style="color:blue"></span>
         </div>
 
     </div>
-
-<span class="pull-right">STOU.01</span>
+    <?php
+  $space = " &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+  $space = $space . $space . $space  . $space  . $space ;
+?>
+<span class="pull-right">STOU.45 <?php echo $space ?></span>
 <?php include '../include/footer2.php';?>
