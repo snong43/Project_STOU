@@ -21,7 +21,7 @@ if("A" != $user_login ){
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="/stou"> รอบรู้ มสธ</a>
+      <a class="navbar-brand" href="../a_index.php"> รอบรู้ มสธ</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
