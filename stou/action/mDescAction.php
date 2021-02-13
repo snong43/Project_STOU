@@ -27,7 +27,7 @@ if("C" != $user_login ){
       <ul class="nav navbar-nav">
         <li ><a href="../member/m_course.php">สนใจเรียน</a></li>
         <li class="active"><a href="../member/m_day_train.php">วิชาอบรม</a></li>
-        <li><a href="../member/m_exam.php">ทดสอบตัวเอง</a></li>
+        <li><a href="../member/m_exam.php">ประเมินตนเอง</a></li>
         <li><a href="../member/m_grade.php">บันทึกผลการเรียน</a></li>
         <li><a href="../e_exam/m_exam_search.php">คลังข้อสอบ</a></li>
       </ul>

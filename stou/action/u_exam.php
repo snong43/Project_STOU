@@ -27,7 +27,7 @@ if("A" != $user_login ){
       <ul class="nav navbar-nav">
         <li><a href="../admin/a_course.php">หลักสูตร</a></li>
         <li><a href="../admin/a_train.php">วิชาฝึกอบรม</a></li>
-        <li class="active"><a href="../admin/a_exam.php">แบบทดสอบ</a></li>
+        <li class="active"><a href="../admin/a_exam.php">ประเมินตนเอง</a></li>
         <li ><a href="../admin/a_admin.php">กำหนดสิทธิ์</a></li>
         <li><a href="../e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
         <li><a href="../e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
@@ -59,11 +59,11 @@ if("A" != $user_login ){
 */
 ?>
 <div class="container">
-<h2>กำหนดแบบทดสอบ</h2>
+<h2>กำหนดแบบประเมินตนเอง</h2>
   <form class="form-horizontal" action="updExam.php" method="post">
     <input type="hidden" id="course_id" name="course_id" value="<?php echo $course_id; ?>" />
   <div class="panel panel-info">
-      <div class="panel-heading">แบบทดสอบ</div>
+      <div class="panel-heading">แบบประเมินตนเอง</div>
       <div class="panel-body">
       
       

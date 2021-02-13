@@ -27,7 +27,7 @@ if("A" != $user_login ){
       <ul class="nav navbar-nav">
         <li><a href="./admin/a_course.php">หลักสูตร</a></li>
         <li><a href="./admin/a_train.php">วิชาฝึกอบรม</a></li>
-        <li><a href="./admin/a_exam.php">แบบทดสอบ</a></li>
+        <li><a href="./admin/a_exam.php">ประเมินตนเอง</a></li>
         <li><a href="./admin/a_admin.php">กำหนดสิทธิ์</a></li>
         <li><a href="./e_exam/a_exam_search.php">คลังข้อสอบ</a></li>
         <li><a href="./e_news/a_news_search.php">ข่าวประชาสัมพันธ์</a></li>
@@ -55,8 +55,8 @@ if("A" != $user_login ){
     </div>
     <div class="col-sm-2"> 
       <div class="panel panel-primary">
-        <div class="panel-heading text-center">แบบทดสอบ</div>
-        <div class="panel-body"><a href="./admin/a_exam.php"><img src="img/exam.png" class="img-responsive" style="width:100%" alt="แบบทดสอบ"></a></div>
+        <div class="panel-heading text-center">ประเมินตนเอง</div>
+        <div class="panel-body"><a href="./admin/a_exam.php"><img src="img/exam.png" class="img-responsive" style="width:100%" alt="ประเมินตนเอง"></a></div>
       </div>
     </div>
     <div class="col-sm-2"> 
